@@ -16,8 +16,6 @@ gnb_data_store = {
 ue_data_store = {
 
 }
-
-lis_data_store = {}
 ctcf_data_store = {}
 simulator_data_store = {}
 ml_model_store = {}
@@ -25,22 +23,51 @@ odr_dataset_store = {}
 experiment_status_store = {}
 
 CLISCF_API_BASE_URL = "http://localhost:5001"
+CTCF_API_BASE_URL = "http://localhost:5002"
+CgNBCF_API_BASE_URL = "http://localhost:5003"
 
 # Error handling
 @app.errorhandler(404)
 def not_found(error):
-    return jsonify({"error": "Resource not found"}), 404
+    problem = {
+        'error' : {
+            'type' : "",
+            'title' : "Resource Not Found",
+            'status' : 404,
+            'detail' : "The resource you requested was not found.",
+            'instance' : request.url
+        }
+    }
+    return jsonify(problem), 404
 
 @app.errorhandler(400)
 def bad_request(error):
-    return jsonify({"error": "Bad request"}), 400
+    problem = {
+        'error' : {
+            'type' : "",
+            'title' : "Bad Request",
+            'status' : 400,
+            'detail' : "The request could not be understood or was missing required parameters.",
+            'instance' : request.url
+        }
+    }
+    return jsonify(problem), 400
 
 @app.errorhandler(500)
 def internal_error(error):
-    return jsonify({"error": "Internal server error"}), 500
+    problem = {
+        'error' : {
+            'type' : "",
+            'title' : "Internal Server Error",
+            'status' : 500,
+            'detail' : "An unexpected error occurred on the server.",
+            'instance' : request.url
+        }
+    }
+    return jsonify(problem), 500
 
-def forward_to_cliscf(endpoint, method, data=None):
-    url = f"{CLISCF_API_BASE_URL}{endpoint}"
+def forward(baseUrl,endpoint, method, data=None):
+    url = f"{baseUrl}{endpoint}"
     try:
         if method == 'GET':
             response = requests.get(url)
@@ -60,29 +87,28 @@ def forward_to_cliscf(endpoint, method, data=None):
 
 
 # gNB Endpoints
-@app.route('/api/v1/gNB/placement-status/{<int:gnbId>}', methods=['GET'])
+@app.route('/api/v1/gNB/placement-status/<int:gnbId>', methods=['GET'])
 def get_gnb_placement_status(gnbId):
-    return jsonify(gnb_data_store.get(gnbId, {}).get('placement_status', {})), 200
+    return forward(CgNBCF_API_BASE_URL,'/configuration/{gnbId}', 'GET',)
 
-@app.route('/api/v1/gNB/placement-setup/{<int:gnbId>}', methods=['POST'])
+@app.route('/api/v1/gNB/placement-setup/<int:gnbId>', methods=['POST'])
 def setup_gnb_placement(gnbId):
-    gnb_data_store.setdefault(gnbId, {})['placement_status'] = request.json
-    return jsonify({"result": "gNB placement setup successful"}), 201
+    return forward(CgNBCF_API_BASE_URL,'/configuration/{gnbId}', 'POST', request.json)
 
-@app.route('/api/v1/gNB/radiocommunications-status/{<int:gnbId>}', methods=['GET'])
+@app.route('/api/v1/gNB/radiocommunications-status/<int:gnbId>', methods=['GET'])
 def get_gnb_radio_communications_status(gnbId):
     return jsonify(gnb_data_store.get(gnbId, {}).get('radio_communications_status', {})), 200
 
-@app.route('/api/v1/gNB/radiocommunications-setup/{<int:gnbId>}', methods=['POST'])
+@app.route('/api/v1/gNB/radiocommunications-setup/<int:gnbId>', methods=['POST'])
 def setup_gnb_radio_communications(gnbId):
     gnb_data_store.setdefault(gnbId, {})['radio_communications_status'] = request.json
     return jsonify({"result": "gNB radio communications setup successful"}), 201
 
-@app.route('/api/v1/gNB/radiosensing-status/{<int:gnbId>}', methods=['GET'])
+@app.route('/api/v1/gNB/radiosensing-status/<int:gnbId>', methods=['GET'])
 def get_gnb_radio_sensing_status(gnbId):
     return jsonify(gnb_data_store.get(gnbId, {}).get('radio_sensing_status', {})), 200
 
-@app.route('/api/v1/gNB/radiosensing-setup/{<int:gnbId>}', methods=['POST'])
+@app.route('/api/v1/gNB/radiosensing-setup/<int:gnbId>', methods=['POST'])
 def setup_gnb_radio_sensing(gnbId):
     gnb_data_store.setdefault(gnbId, {})['radio_sensing_status'] = request.json
     return jsonify({"result": "gNB radio sensing setup successful"}), 201
@@ -91,12 +117,12 @@ def setup_gnb_radio_sensing(gnbId):
 def get_gnb_video_sensing_status(gnbId):
     return jsonify(gnb_data_store.get(gnbId, {}).get('video_sensing_status', {})), 200
 
-@app.route('/api/v1/gNB/videosensing-setup/{<int:gnbId>}', methods=['POST'])
+@app.route('/api/v1/gNB/videosensing-setup/<int:gnbId>', methods=['POST'])
 def setup_gnb_video_sensing(gnbId):
     gnb_data_store.setdefault(gnbId, {})['video_sensing_status'] = request.json
     return jsonify({"result": "gNB video sensing setup successful"}), 201
 
-@app.route('/api/v1/gNB/xapp-status/{<int:id>}', methods=['GET'])
+@app.route('/api/v1/gNB/xapp-status/<int:id>', methods=['GET'])
 def get_gnb_xapp_status(id):
     return jsonify(gnb_data_store.get(id, {}).get('xapp_status', {})), 200
 
@@ -106,104 +132,108 @@ def upload_gnb_xapp(id):
     return jsonify({"result": "gNB x-APP upload successful"}), 201
 
 # UE Endpoints
-@app.route('/api/v1/UE/placement-status/{<int:ueId>}', methods=['GET'])
+@app.route('/api/v1/UE/placement-status/<int:ueId>', methods=['GET'])
 def get_ue_placement_status(ueId):
     return jsonify(ue_data_store.get(ueId, {}).get('placement_status', {})), 200
 
-@app.route('/api/v1/UE/placement-setup/{<int:ueId>}', methods=['POST'])
+@app.route('/api/v1/UE/placement-setup/<int:ueId>', methods=['POST'])
 def setup_ue_placement(ueId):
     ue_data_store.setdefault(ueId, {})['placement_status'] = request.json
     return jsonify({"result": "UE placement setup successful"}), 201
 
-@app.route('/api/v1/UE/radiocommunications-status/{<int:ueId>}', methods=['GET'])
+@app.route('/api/v1/UE/radiocommunications-status/<int:ueId>', methods=['GET'])
 def get_ue_radio_communications_status(ueId):
     return jsonify(ue_data_store.get(ueId, {}).get('radio_communications_status', {})), 200
 
-@app.route('/api/v1/UE/radiocommunications-setup/{<int:ueId>}', methods=['POST'])
+@app.route('/api/v1/UE/radiocommunications-setup/<int:ueId>', methods=['POST'])
 def setup_ue_radio_communications(ueId):
     ue_data_store.setdefault(ueId, {})['radio_communications_status'] = request.json
     return jsonify({"result": "UE radio communications setup successful"}), 201
 
-@app.route('/api/v1/UE/radiosensing-status/{<int:ueId>}', methods=['GET'])
+@app.route('/api/v1/UE/radiosensing-status/<int:ueId>', methods=['GET'])
 def get_ue_radio_sensing_status(ueId):
     return jsonify(ue_data_store.get(ueId, {}).get('radio_sensing_status', {})), 200
 
-@app.route('/api/v1/UE/radiosensing-setup/{<int:ueId>}', methods=['POST'])
+@app.route('/api/v1/UE/radiosensing-setup/<int:ueId>', methods=['POST'])
 def setup_ue_radio_sensing(ueId):
     ue_data_store.setdefault(ueId, {})['radio_sensing_status'] = request.json
     return jsonify({"result": "UE radio sensing setup successful"}), 201
 
-@app.route('/api/v1/UE/videosensing-status/{<int:ueId>}', methods=['GET'])
+@app.route('/api/v1/UE/videosensing-status/<int:ueId>', methods=['GET'])
 def get_ue_video_sensing_status(ueId):
     return jsonify(ue_data_store.get(ueId, {}).get('video_sensing_status', {})), 200
 
-@app.route('/api/v1/UE/videosensing-setup/{<int:ueId>}', methods=['POST'])
+@app.route('/api/v1/UE/videosensing-setup/<int:ueId>', methods=['POST'])
 def setup_ue_video_sensing(ueId):
     ue_data_store.setdefault(ueId, {})['video_sensing_status'] = request.json
     return jsonify({"result": "UE video sensing setup successful"}), 201
 
 # LIS Endpoints
-@app.route('/api/v1/LIS/placement-status/{<int:lisId>}', methods=['GET'])
+@app.route('/api/v1/LIS/placement-status/<int:lisId>', methods=['GET'])
 def get_lis_placement_status(lisId):
-    return forward_to_cliscf(f"/configuration/placement/{lisId}/status", 'GET')
+    return forward(CLISCF_API_BASE_URL, f"/configuration/placement/{lisId}/status", 'GET')
 
-@app.route('/api/v1/LIS/placement-setup/{<int:lisId>}', methods=['POST'])
+@app.route('/api/v1/LIS/placement-setup/<int:lisId>', methods=['POST'])
 def setup_lis_placement(lisId):
-    return forward_to_cliscf(f"/configuration/placement/{lisId}", 'POST', request.json)
+    return forward(CLISCF_API_BASE_URL, f"/configuration/placement/{lisId}", 'POST', request.json)
 
-@app.route('/api/v1/LIS/radiocommunications-status/{<int:lisId>}', methods=['GET'])
+@app.route('/api/v1/LIS/radiocommunications-status/<int:lisId>', methods=['GET'])
 def get_lis_radio_communications_status(lisId):
-    return forward_to_cliscf(f"/configuration/radio-comms/{lisId}/status", 'GET')
+    return forward(CLISCF_API_BASE_URL, f"/configuration/radio-comms/{lisId}/status", 'GET')
 
-@app.route('/api/v1/LIS/radiocommunications-setup/{<int:lisId>}', methods=['POST'])
+@app.route('/api/v1/LIS/radiocommunications-setup/<int:lisId>', methods=['POST'])
 def setup_lis_radio_communications(lisId):
-    return forward_to_cliscf(f"/configuration/radio-comms/{lisId}", 'POST', request.json)
+    return forward(CLISCF_API_BASE_URL, f"/configuration/radio-comms/{lisId}", 'POST', request.json)
 
-@app.route('/api/v1/LIS/radiosensing-status/{<int:lisId>}', methods=['GET'])
+@app.route('/api/v1/LIS/radiosensing-status/<int:lisId>', methods=['GET'])
 def get_lis_radio_sensing_status(lisId):
-    return forward_to_cliscf(f"/configuration/radio-sensing/{lisId}/status", 'GET')
+    return forward(CLISCF_API_BASE_URL, f"/configuration/radio-sensing/{lisId}/status", 'GET')
 
-@app.route('/api/v1/LIS/radiosensing-setup/{<int:lisId>}', methods=['POST'])
+@app.route('/api/v1/LIS/radiosensing-setup/<int:lisId>', methods=['POST'])
 def setup_lis_radio_sensing(lisId):
-    return forward_to_cliscf(f"/configuration/radio-sensing/{lisId}", 'POST', request.json)
+    return forward(CLISCF_API_BASE_URL, f"/configuration/radio-sensing/{lisId}", 'POST', request.json)
 
-@app.route('/api/v1/LIS/videosensing-status/{<int:lisId>}', methods=['GET'])
+@app.route('/api/v1/LIS/videosensing-status/<int:lisId>', methods=['GET'])
 def get_lis_video_sensing_status(lisId):
-    return forward_to_cliscf(f"/configuration/video-sensing/{lisId}/status", 'GET')
+    return forward(CLISCF_API_BASE_URL, f"/configuration/video-sensing/{lisId}/status", 'GET')
 
-@app.route('/api/v1/LIS/videosensing-setup/{<int:lisId>}', methods=['POST'])
+@app.route('/api/v1/LIS/videosensing-setup/<int:lisId>', methods=['POST'])
 def setup_lis_video_sensing(lisId):
-    return forward_to_cliscf(f"/configuration/video-sensing/{lisId}", 'POST', request.json)
+    return forward(CLISCF_API_BASE_URL,f"/configuration/video-sensing/{lisId}", 'POST', request.json)
 
 # CTCF Endpoints
-@app.route('/api/v1/CTCF/status/{<int:ctcfId>}', methods=['GET'])
-def get_ctcf_status(ctcfId):
-    return jsonify(ctcf_data_store.get(ctcfId, {}).get('status', {})), 200
 
-@app.route('/api/v1/CTCF/setup/{<int:ctcfId>}', methods=['POST'])
+@app.route('/api/v1/CTCF/status/<int:ctcfId>', methods=['GET'])
+def get_ctcf_status(ctcfId):
+    return forward(CTCF_API_BASE_URL,f"/configuration/placement/{ctcfId}/status",'GET')
+
+'''
+@app.route('/api/v1/CTCF/setup/<int:ctcfId>', methods=['POST'])
 def setup_ctcf(ctcfId):
     ctcf_data_store.setdefault(ctcfId, {})['status'] = request.json
     return jsonify({"result": "CTCF setup successful"}), 201
+''' 
 
-@app.route('/api/v1/CTCF/control/<string:action>/{<int:ctcfId>}', methods=['POST'])
-def control_ctcf(action, ctcfId):
-    if action not in ['start', 'stop']:
+@app.route('/api/v1/CTCF/control/<string:command>/<int:ctcfId>', methods=['POST'])
+def control_ctcf(command, ctcfId):
+    if command not in ['start', 'stop']:
         return bad_request(400)
-    ctcf_data_store.setdefault(ctcfId, {})['control'] = action
-    return jsonify({"result": f"CTCF {action} command successful"}), 200
+    ctcf_data_store.setdefault(ctcfId, {})['control'] = command
+    return forward(CTCF_API_BASE_URL,f"/control/{command}/{ctcfId}", 'POST', request.json)
 
-@app.route('/api/v1/CTCF/configuration/{<int:ctcfId>}/rules', methods=['GET'])
+@app.route('/api/v1/CTCF/configuration/<int:ctcfId>/rules', methods=['GET'])
 def get_ctcf_rules(ctcfId):
-    return jsonify(ctcf_data_store.get(ctcfId, {}).get('rules', {})), 200
+    return  forward(CTCF_API_BASE_URL,f"/configuration/{ctcfId}/rules", 'GET')
 
-@app.route('/api/v1/CTCF/configuration/{<int:ctcfId>}/rules', methods=['POST'])
+@app.route('/api/v1/CTCF/configuration/<int:ctcfId>/rules', methods=['POST'])
 def setup_ctcf_rules(ctcfId):
     ctcf_data_store.setdefault(ctcfId, {})['rules'] = request.json
-    return jsonify({"result": "CTCF rules setup successful"}), 201
+    return forward(CTCF_API_BASE_URL,f"/configuration/{ctcfId}/rules", 'POST', request.json)
 
-@app.route('/api/v1/CTCF/telemetry/{<int:ctcfId>}', methods=['GET'])
+@app.route('/api/v1/CTCF/telemetry/<int:ctcfId>', methods=['GET'])
 def get_ctcf_telemetry(ctcfId):
-    return jsonify(ctcf_data_store.get(ctcfId, {}).get('telemetry', {})), 200
+    return forward(CTCF_API_BASE_URL,f"/telemetry/{ctcfId}", 'GET')
+
 
 # NET-S Endpoints
 @app.route('/api/v1/NETS/status', methods=['GET'])

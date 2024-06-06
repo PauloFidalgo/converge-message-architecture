@@ -1,92 +1,86 @@
 from flask import Flask, request, jsonify
+import ProblemDetails
 
 app = Flask(__name__)
 
 # Example data store for CAF
-caf_data_store = {
-    0 : {
-        'placement_status' : 'OK'
+ctcf_data_store = {
+        0 : {
+        'ctcf_status' : 'OK',
+        'traffic_control_rules':'Ola'
     },
-    1 : {
-        'placement_status' : 'FAILED'
-    },
+
 }
 
 # Error handling
 @app.errorhandler(404)
 def not_found(error):
-    return jsonify({"error": "Resource not found"}), 404
+    problem = {
+        'error' : {
+            'type' : "",
+            'title' : "Resource Not Found",
+            'status' : 404,
+            'detail' : "The resource you requested was not found.",
+            'instance' : request.url
+        }
+    }
+    return jsonify(problem), 404
 
 @app.errorhandler(400)
 def bad_request(error):
-    return jsonify({"error": "Bad request"}), 400
+    problem = {
+        'error' : {
+            'type' : "",
+            'title' : "Bad Request",
+            'status' : 400,
+            'detail' : "The request could not be understood or was missing required parameters.",
+            'instance' : request.url
+        }
+    }
+    return jsonify(problem), 400
 
 @app.errorhandler(500)
 def internal_error(error):
-    return jsonify({"error": "Internal server error"}), 500
+    problem = {
+        'error' : {
+            'type' : "",
+            'title' : "Internal Server Error",
+            'status' : 500,
+            'detail' : "An unexpected error occurred on the server.",
+            'instance' : request.url
+        }
+    }
+    return jsonify(problem), 500
 
-# Placement start/stop
-@app.route('/accounts/login', methods=['POST'])
-def authenticate_user(command):
+# CTCF status
+@app.route('/configuration/placement/<int:ctcfId>/status', methods=['GET'])
+def get_placement_status(ctcfId):
+    return jsonify(ctcf_data_store.get(ctcfId, {}).get('ctcf_status', {})), 200
+
+# Traffic Control start/stop
+@app.route('/control/{<string:command>}/<int:ctcfId>', methods=['POST'])
+def traffic_control_start(command, ctcfId):
     if command not in ['start', 'stop']:
         return bad_request("Invalid command")
-    cliscf_data_store.setdefault(lisId, {})['placement_status'] = command
-    return jsonify({"result": f"Placement {command} command executed successfully"}), 201
+    ctcf_data_store.setdefault(ctcfId, {})['traffic_control'] = command
+    return jsonify({"result": f"Traffic Control {command} command executed successfully"}), 201
 
-# Placement configuration
-@app.route('/configuration/placement/{<int:lisId>}', methods=['POST'])
-def configure_placement(lisId):
-    cliscf_data_store.setdefault(lisId, {})['placement_status'] = request.json
-    return jsonify({"result": "Placement configuration successful"}), 201
+# Get Traffic Control Rules
+@app.route('/configuration/<int:ctcfId>/rules', methods=['GET'])
+def get_traffic_control_rules(ctcfId):
+    return jsonify(ctcf_data_store.get(ctcfId, {}).get('traffic_control_rules', {})), 200
 
-# Placement status
-@app.route('/configuration/placement/{<int:lisId>}/status', methods=['GET'])
-def get_placement_status(lisId):
-    return jsonify(cliscf_data_store.get(lisId, {}).get('placement_status', {})), 200
+# Add or modify Traffic Control Rules
+@app.route('/configuration/<int:ctcfId>/rules', methods=['POST'])
+def add_traffic_control_rules(lisId):
+    ctcf_data_store.setdefault(lisId, {})['traffic_control_rules'] = request.json
+    return jsonify({"result": " Traffic Control Rules configuration successful"}), 201
 
-# Radio communications start/stop
-@app.route('/control/radio-comms/<string:command>/{<int:lisId>}', methods=['POST'])
-def control_radio_comms(command, lisId):
-    if command not in ['start', 'stop']:
-        return bad_request("Invalid command")
-    cliscf_data_store.setdefault(lisId, {})['radio_comms_status'] = command
-    return jsonify({"result": f"Radio communications {command} command executed successfully"}), 201
-
-# Radio communications configuration
-@app.route('/configuration/radio-comms/{<int:lisId>}', methods=['POST'])
-def configure_radio_comms(lisId):
-    cliscf_data_store.setdefault(lisId, {})['radio_comms_configuration'] = request.json
-    return jsonify({"result": "Radio communications configuration successful"}), 201
-
-# Radio communications feedback
-@app.route('/configuration/radio-comms/{<int:lisId>}/feedback', methods=['POST'])
-def radio_comms_feedback(lisId):
-    cliscf_data_store.setdefault(lisId, {})['radio_comms_feedback'] = request.json
-    return jsonify({"result": "Radio communications feedback received"}), 201
-
-# Radio communications status
-@app.route('/configuration/radio-comms/{<int:lisId>}/status', methods=['GET'])
-def get_radio_comms_status(lisId):
-    return jsonify(cliscf_data_store.get(lisId, {}).get('radio_comms_configuration', {})), 200
-
-# Radio sensing start/stop
-@app.route('/control/radio-sensing/<string:command>/{<int:lisId>}', methods=['POST'])
-def control_radio_sensing(command, lisId):
-    if command not in ['start', 'stop']:
-        return bad_request("Invalid command")
-    cliscf_data_store.setdefault(lisId, {})['radio_sensing_status'] = command
-    return jsonify({"result": f"Radio sensing {command} command executed successfully"}), 201
-
-# Radio sensing configuration
-@app.route('/configuration/radio-sensing/{<int:lisId>}', methods=['POST'])
-def configure_radio_sensing(lisId):
-    cliscf_data_store.setdefault(lisId, {})['radio_sensing_configuration'] = request.json
-    return jsonify({"result": "Radio sensing configuration successful"}), 201
-
-# Radio sensing status
-@app.route('/configuration/radio-sensing/{<int:lisId>}/status', methods=['GET'])
-def get_radio_sensing_status(lisId):
-    return jsonify(cliscf_data_store.get(lisId, {}).get('radio_sensing_configuration', {})), 200
+# Get Traffic Statistics
+@app.route('/telemetry/<int:ctcfId>', methods=['GET'])
+def get_traffic_statistics(ctcfId):
+    return jsonify(ctcf_data_store.get(ctcfId, {}).get('traffic_Statistics', {})), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
+

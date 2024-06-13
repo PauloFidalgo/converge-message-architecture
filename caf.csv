@@ -1,5 +1,0 @@
-Resource Name, Resource URI, HTTP Method
-Traffic Control Start, /control/{start/stop}/{CTCF_ID}, GET
-Traffic Control Rules, /configuration/{CTCF_ID}/rules, GET
-Traffic Control Rules, /configuration/{CTCF_ID}/rules, POST
-Traffic Statistics, /telemetry/{CTCF_ID}, GET

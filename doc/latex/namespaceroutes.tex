@@ -1,0 +1,2341 @@
+\doxysection{routes Namespace Reference}
+\hypertarget{namespaceroutes}{}\label{namespaceroutes}\index{routes@{routes}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceroutes_aee4a97c099b5f41402c9bc3cba9044e1}{not\+\_\+found}} (error)
+\item 
+\mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\+\_\+request}} (error)
+\item 
+\mbox{\hyperlink{namespaceroutes_a3835b86d14fc4e361f491cdd5162117f}{internal\+\_\+error}} (error)
+\item 
+\mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}} (base\+Url, endpoint, method, data=None)
+\item 
+\mbox{\hyperlink{namespaceroutes_af49e4106cb25dedf3d62777e692e7a07}{get\+\_\+gnb\+\_\+placement\+\_\+status}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a18ad2f57b5dd4beec9c1d8365fbd7293}{setup\+\_\+gnb\+\_\+placement}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a912233f796092993e1b37220a574b1bb}{get\+\_\+gnb\+\_\+radio\+\_\+communications\+\_\+status}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a4bb1c2c35f3d6dbf8337c281b6e1cb5e}{setup\+\_\+gnb\+\_\+radio\+\_\+communications}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a56449f20355eea281af1bd96f87bc7be}{get\+\_\+gnb\+\_\+radio\+\_\+sensing\+\_\+status}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a17d2ad472d06b0ebc70c61da7cd53d9b}{setup\+\_\+gnb\+\_\+radio\+\_\+sensing}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_aaed703fef3538e3710445470e5c70a4a}{get\+\_\+gnb\+\_\+video\+\_\+sensing\+\_\+status}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a64b7dca1cb64c2fdd3aef5aa0afadb90}{setup\+\_\+gnb\+\_\+video\+\_\+sensing}} (gnb\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_aca2d3a8c9593ce33e40d9fd061611ca2}{get\+\_\+gnb\+\_\+xapp\+\_\+status}} (id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ae7be8be87ffe1dd86b9224825ae63c80}{upload\+\_\+gnb\+\_\+xapp}} (id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a16abe2cf56da9883f27c40680ec2f200}{get\+\_\+ue\+\_\+placement\+\_\+status}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_adbc1e681ba51410bcaa7b6daa132ae6b}{setup\+\_\+ue\+\_\+placement}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a77fafc3be371431fdd3ea43fce38bd69}{get\+\_\+ue\+\_\+radio\+\_\+communications\+\_\+status}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_adf51db9b7c3a24d5a716976a99fdaa33}{setup\+\_\+ue\+\_\+radio\+\_\+communications}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ac30617705b6f90a90629ef686b7e29b9}{get\+\_\+ue\+\_\+radio\+\_\+sensing\+\_\+status}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a545a8507a4ea61fb629f41cd9bca63bb}{setup\+\_\+ue\+\_\+radio\+\_\+sensing}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a22b1361e16de5ee209338740d36b20a6}{get\+\_\+ue\+\_\+video\+\_\+sensing\+\_\+status}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ad1c55935fb8c0b32a9f4f02bb2d6efe2}{setup\+\_\+ue\+\_\+video\+\_\+sensing}} (ue\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a6e263f7253ee73661633e9c7be9c5118}{get\+\_\+lis\+\_\+placement\+\_\+status}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ad299ca060a291e7f925088f2bd615d45}{setup\+\_\+lis\+\_\+placement}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a5825ec0d3589431b5c4bfafce02992df}{get\+\_\+lis\+\_\+radio\+\_\+communications\+\_\+status}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ab06c2dcdaad7ef2385c587a0beff5730}{setup\+\_\+lis\+\_\+radio\+\_\+communications}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ad9e5c87f5482841865a6a7861d8ba706}{get\+\_\+lis\+\_\+radio\+\_\+sensing\+\_\+status}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a68ef295de05d13b18702f4d68f901a1b}{setup\+\_\+lis\+\_\+radio\+\_\+sensing}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_af0ae0a15e3a03ee4c724272859697c63}{get\+\_\+lis\+\_\+video\+\_\+sensing\+\_\+status}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a951108890d5ce6747d395a22a86e88b7}{setup\+\_\+lis\+\_\+video\+\_\+sensing}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a2bab26910cbb03d211f6b0a29731bb31}{get\+\_\+ctcf\+\_\+status}} (ctcf\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a83f61021dc0e0db323e6d2c67b17b76a}{control\+\_\+ctcf}} (command, ctcf\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a6cc67b927fa1fa0fdfad218acab99211}{get\+\_\+ctcf\+\_\+rules}} (ctcf\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a96394345325bc7219d2344675c00fef2}{setup\+\_\+ctcf\+\_\+rules}} (ctcf\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ac0cf40b9056b2f2760359dcfa97053da}{get\+\_\+ctcf\+\_\+telemetry}} (ctcf\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_afee1eb907f39641dd9a672e2596e0d72}{get\+\_\+nets\+\_\+status}} ()
+\item 
+\mbox{\hyperlink{namespaceroutes_a1aef58af69c7376232bd85902bb358cb}{setup\+\_\+nets}} ()
+\item 
+\mbox{\hyperlink{namespaceroutes_a142f5335bdb63ebc9182ee001a3a6798}{upload\+\_\+ml\+\_\+model}} ()
+\item 
+\mbox{\hyperlink{namespaceroutes_a45837ce7645dee8d58b5cb5ab9d6c1e6}{download\+\_\+ml\+\_\+model}} ()
+\item 
+\mbox{\hyperlink{namespaceroutes_a8880f531703ce930a38645ff1eb8a517}{download\+\_\+odr\+\_\+dataset}} ()
+\item 
+\mbox{\hyperlink{namespaceroutes_af008a443d653cde87491644567ad02d7}{upload\+\_\+odr\+\_\+dataset}} ()
+\item 
+\mbox{\hyperlink{namespaceroutes_a692f82cc48d5024a765e622748734716}{get\+\_\+experiment\+\_\+status}} ()
+\item 
+\mbox{\hyperlink{namespaceroutes_a56d4e0355ebab28bae5f7456105b3ff3}{gnb\+\_\+control\+\_\+start}} (command, gnb\+Id)
+\begin{DoxyCompactList}\small\item\em Cg\+NB Start/\+Stop Cg\+NB sends Start/\+Stop command to NT-\/\+RIC, O-\/\+CU, O-\/\+DU and O-\/\+RU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a00d5f3322748495c6fb4beb8a30537ae}{get\+\_\+gnb\+\_\+configuration}} (gnb\+Id)
+\begin{DoxyCompactList}\small\item\em Cg\+NB Configuration Status Get the current Cg\+NB configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a602ba0605848ce83212285a9b234d27a}{get\+\_\+gnb\+\_\+status}} (gnb\+Id)
+\begin{DoxyCompactList}\small\item\em Cg\+NB Status Get the current Cg\+NB status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a2f413e87ba5077b169057cb0f2c55201}{configure\+\_\+radio\+\_\+comms}} (gnb\+Id)
+\begin{DoxyCompactList}\small\item\em Cg\+NB Reconfiguration Cg\+NB creates and sends a reconfiguration command via Cg\+NB interface to O-\/\+CU, O-\/\+DU, O-\/\+RU and NT-\/\+RIC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a11c01782ff3258beecb164495bdb3c95}{not\+\_\+found}} (error)
+\item 
+\mbox{\hyperlink{namespaceroutes_aa25fe717bd6e120f3203789498c8c584}{bad\+\_\+request}} (error)
+\item 
+\mbox{\hyperlink{namespaceroutes_a4b430e64de2b9ef01438a94995324578}{internal\+\_\+error}} (error)
+\item 
+\mbox{\hyperlink{namespaceroutes_ac9fb8f94141dbad10e5205afe7ed8ebf}{control\+\_\+placement}} (command, lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a8c7dac99c817584a9763b01e266e4804}{configure\+\_\+placement}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_afb0c1f18fd863b72709aaad3fbedddc0}{get\+\_\+placement\+\_\+configuration}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a9a1cfb28baef8c58b0367777e062e1a0}{get\+\_\+placement\+\_\+status}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ada02cc02f79752b22e20198af0e9cab5}{control\+\_\+radio\+\_\+comms}} (command, lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a81356f95eb23145423c2fa04adc57e2a}{radio\+\_\+comms\+\_\+feedback}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a76729938f5c858b82ab150efe76ae00c}{get\+\_\+radio\+\_\+comms\+\_\+configuration}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_ae21b79f8d287d5b9f3d8cfc86ee9e310}{get\+\_\+radio\+\_\+comms\+\_\+status}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a0e1e52cf7c6e223eb30c38968732c1d9}{control\+\_\+radio\+\_\+sensing}} (command, lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_aaf2fa88e5957f30692c4d01ea1c97cc7}{configure\+\_\+radio\+\_\+sensing}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a27e0f2294f6bf336090b849df23d14ba}{get\+\_\+radio\+\_\+sensing\+\_\+status}} (lis\+Id)
+\item 
+\mbox{\hyperlink{namespaceroutes_a8861d0277e1cc500c4b9d746882fe8a6}{traffic\+\_\+control\+\_\+start}} (command, ctcf\+Id)
+\begin{DoxyCompactList}\small\item\em CTCF sends a start/stop command to control traffic servers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a13d0baf8850620bb45d56d1d50357c69}{get\+\_\+traffic\+\_\+control\+\_\+rules}} (ctcf\+Id)
+\begin{DoxyCompactList}\small\item\em Get the current traffic control rules configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a3167dd25e150291c0f29bb5fa5245c04}{add\+\_\+traffic\+\_\+control\+\_\+rules}} (ctcf\+Id)
+\begin{DoxyCompactList}\small\item\em Add or modify traffic control rules. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_aae8ceb400551a95ae95a2fe1b8468d18}{get\+\_\+traffic\+\_\+statistics}} (ctcf\+Id)
+\begin{DoxyCompactList}\small\item\em Get statistics related to traffic control. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a7e95b73c2d9937fb69d5650ebb582c25}{ue\+\_\+control\+\_\+start}} (command, ue\+Id)
+\begin{DoxyCompactList}\small\item\em CUECF sends Start/\+Stop command via CUE interface to the relevant UE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a36c13fa063e7e99ba0e864158c7be96f}{get\+\_\+ue\+\_\+configuration}} (ue\+Id)
+\begin{DoxyCompactList}\small\item\em Get the current CUE configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_ab756ff2567fc3ebe1ed2ac6a3e3bcdf8}{get\+\_\+ue\+\_\+status}} (ue\+Id)
+\begin{DoxyCompactList}\small\item\em Get the current CUE status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_ac4829c865afdb11438225b1cea677c69}{cvf\+\_\+control\+\_\+start}} (command, camera\+Id)
+\begin{DoxyCompactList}\small\item\em CVCF sends a start/stop command to the cameras. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_aca57936ba319bed984515393a6774eab}{configure\+\_\+camera}} (camera\+Id)
+\begin{DoxyCompactList}\small\item\em Set camera configuration based on its ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_af68b5423ecb125b7b2c0414af1440211}{get\+\_\+camera\+\_\+status}} (camera\+Id)
+\begin{DoxyCompactList}\small\item\em Get camera status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a9aa82ee30b50d7051bca297973525066}{get\+\_\+camera\+\_\+configuration}} (camera\+Id)
+\begin{DoxyCompactList}\small\item\em Get camera configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_aa9adbcf64894ce960168d66811896c6e}{visual\+\_\+model\+\_\+control\+\_\+start}} (command, model\+Id)
+\begin{DoxyCompactList}\small\item\em CVCF sends a start/stop command to activate/deactivate support vision model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a318931a14ef8219b47db13b3dd008c6b}{configure\+\_\+visual\+\_\+model}} (model\+Id)
+\begin{DoxyCompactList}\small\item\em Set support vision model configuration based on its ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_a98ab20b7fc92e527ee039de9d8c058db}{get\+\_\+vision\+\_\+model\+\_\+configuration}} (model\+Id)
+\begin{DoxyCompactList}\small\item\em Get support vision model configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceroutes_ad1fd354e163c974788e7568052bba33d}{get\+\_\+vision\+\_\+model\+\_\+status}} (model\+Id)
+\begin{DoxyCompactList}\small\item\em Get support vision model status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceroutes_aa19e2022eb0077bf5893dce2630b95e0}{app}} = Flask(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+dict \mbox{\hyperlink{namespaceroutes_aeb7e4182a49a873c38267cce833fc5c6}{gnb\+\_\+data\+\_\+store}}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_ada96cece39440b40cc3968fb9b591495}{ue\+\_\+data\+\_\+store}}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_a66e5bb820e3ad200c4fd838c546bd357}{ctcf\+\_\+data\+\_\+store}} = \{\}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_ade14e5c80f087fea9308bbe4a7a08d41}{simulator\+\_\+data\+\_\+store}} = \{\}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_a6290743aed09ae309cb9c1c0afc32b8e}{ml\+\_\+model\+\_\+store}} = \{\}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_a23c745955447c4a37a63da751ad763a1}{odr\+\_\+dataset\+\_\+store}} = \{\}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_a9fa895c2eb37c54360dce0df00014b4c}{experiment\+\_\+status\+\_\+store}} = \{\}
+\item 
+str \mbox{\hyperlink{namespaceroutes_a348d99faed1b3ae1448c6a629e66fdf0}{CLISCF\+\_\+\+API\+\_\+\+BASE\+\_\+\+URL}} = "{}http\+://localhost\+:5001"{}
+\item 
+str \mbox{\hyperlink{namespaceroutes_a19d91047f44c1c6f7a6a67d057b80981}{CTCF\+\_\+\+API\+\_\+\+BASE\+\_\+\+URL}} = "{}http\+://localhost\+:5002"{}
+\item 
+str \mbox{\hyperlink{namespaceroutes_a3bff88aea63ed017ffcb3d6ce821479e}{Cg\+NBCF\+\_\+\+API\+\_\+\+BASE\+\_\+\+URL}} = "{}http\+://localhost\+:5003"{}
+\item 
+\mbox{\hyperlink{namespaceroutes_ae873f30fd49cbfacfd4cfcc5908b85eb}{debug}}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_a5e9ff14895bcc41c4b6c965f1f9c2968}{cgnbcf\+\_\+data\+\_\+store}}
+\item 
+dict \mbox{\hyperlink{namespaceroutes_ac5d2cd04816941238c12518435d1cc7b}{cliscf\+\_\+data\+\_\+store}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceroutes_a3167dd25e150291c0f29bb5fa5245c04}\index{routes@{routes}!add\_traffic\_control\_rules@{add\_traffic\_control\_rules}}
+\index{add\_traffic\_control\_rules@{add\_traffic\_control\_rules}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{add\_traffic\_control\_rules()}{add\_traffic\_control\_rules()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a3167dd25e150291c0f29bb5fa5245c04} 
+routes.\+add\+\_\+traffic\+\_\+control\+\_\+rules (\begin{DoxyParamCaption}\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Add or modify traffic control rules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctcf\+Id} & The ID of the CTCF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the configuration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_t_c_f_2routes_8py_source_l00094}{94}} of file \mbox{\hyperlink{_c_t_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \textcolor{keyword}{def\ }add\_traffic\_control\_rules(ctcfId):}
+\DoxyCodeLine{00095\ \ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})[\textcolor{stringliteral}{'ctcf\_rules'}]\ =\ request.json}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Traffic\ Control\ Rules\ configuration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00097\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_afd738b9253cab3a49f1626d92a080858}\index{routes@{routes}!bad\_request@{bad\_request}}
+\index{bad\_request@{bad\_request}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{bad\_request()}{bad\_request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceroutes_afd738b9253cab3a49f1626d92a080858} 
+routes.\+bad\+\_\+request (\begin{DoxyParamCaption}\item[{error}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Handles 400 errors.
+@param error The error object.
+@return JSON response with error details.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{44}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \textcolor{keyword}{def\ }bad\_request(error):}
+\DoxyCodeLine{00045\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Bad\ Request"{}},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 400,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}The\ request\ could\ not\ be\ understood\ or\ was\ missing\ required\ parameters."{}},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 400}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{@app.errorhandler(500)}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00218}{control\+\_\+ctcf()}}, \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00075}{control\+\_\+placement()}}, \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00116}{control\+\_\+radio\+\_\+comms()}}, \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00167}{control\+\_\+radio\+\_\+sensing()}}, \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00070}{cvf\+\_\+control\+\_\+start()}}, \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source_l00077}{gnb\+\_\+control\+\_\+start()}}, \mbox{\hyperlink{_c_t_c_f_2routes_8py_source_l00077}{traffic\+\_\+control\+\_\+start()}}, \mbox{\hyperlink{_c_u_e_c_f_2routes_8py_source_l00069}{ue\+\_\+control\+\_\+start()}}, and \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00103}{visual\+\_\+model\+\_\+control\+\_\+start()}}.
+
+\Hypertarget{namespaceroutes_aa25fe717bd6e120f3203789498c8c584}\index{routes@{routes}!bad\_request@{bad\_request}}
+\index{bad\_request@{bad\_request}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{bad\_request()}{bad\_request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceroutes_aa25fe717bd6e120f3203789498c8c584} 
+routes.\+bad\+\_\+request (\begin{DoxyParamCaption}\item[{}]{error}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Handles 400 errors.
+@param error The error object.
+@return JSON response with error details.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00039}{39}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \textcolor{keyword}{def\ }bad\_request(error):}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00041\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 400\ errors.}}
+\DoxyCodeLine{00042\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{00043\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{00044\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00045\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}:\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}:\ \textcolor{stringliteral}{"{}Bad\ Request"{}},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}:\ 400,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}:\ \textcolor{stringliteral}{"{}The\ request\ could\ not\ be\ understood\ or\ was\ missing\ required\ parameters."{}},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}:\ request.url}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 400}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{@app.errorhandler(500)}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_aca57936ba319bed984515393a6774eab}\index{routes@{routes}!configure\_camera@{configure\_camera}}
+\index{configure\_camera@{configure\_camera}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{configure\_camera()}{configure\_camera()}}
+{\footnotesize\ttfamily \label{namespaceroutes_aca57936ba319bed984515393a6774eab} 
+routes.\+configure\+\_\+camera (\begin{DoxyParamCaption}\item[{}]{camera\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Set camera configuration based on its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\+Id} & The ID of the camera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the configuration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00080}{80}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \textcolor{keyword}{def\ }configure\_camera(cameraId):}
+\DoxyCodeLine{00081\ \ \ \ \ cvf\_data\_store.setdefault(cameraId,\ \{\})[\textcolor{stringliteral}{'camera\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Camera\ reconfiguration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00083\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a8c7dac99c817584a9763b01e266e4804}\index{routes@{routes}!configure\_placement@{configure\_placement}}
+\index{configure\_placement@{configure\_placement}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{configure\_placement()}{configure\_placement()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a8c7dac99c817584a9763b01e266e4804} 
+routes.\+configure\+\_\+placement (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Configures the placement position of the LIS.
+@param lisId The ID of the LIS.
+@return JSON response with the result of the configuration.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00088}{88}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \textcolor{keyword}{def\ }configure\_placement(lisId):}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00090\ \textcolor{stringliteral}{\ \ \ \ @brief\ Configures\ the\ placement\ position\ of\ the\ LIS.}}
+\DoxyCodeLine{00091\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00092\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ configuration.}}
+\DoxyCodeLine{00093\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00094\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'placement\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Placement\ configuration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{@app.route('/configuration/placement/<int:lisId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a2f413e87ba5077b169057cb0f2c55201}\index{routes@{routes}!configure\_radio\_comms@{configure\_radio\_comms}}
+\index{configure\_radio\_comms@{configure\_radio\_comms}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{configure\_radio\_comms()}{configure\_radio\_comms()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a2f413e87ba5077b169057cb0f2c55201} 
+routes.\+configure\+\_\+radio\+\_\+comms (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Cg\+NB Reconfiguration Cg\+NB creates and sends a reconfiguration command via Cg\+NB interface to O-\/\+CU, O-\/\+DU, O-\/\+RU and NT-\/\+RIC. 
+
+The CUECF creates and sends a reconfiguration command via CUE interface to the relevant UE.
+
+\begin{DoxyVerb}@brief Creates and sends a reconfiguration command via CgNB interface to O-CU, O-DU, O-RU, and NT-RIC.
+@param gnbId The ID of the gNB.
+@return JSON response with the result of the reconfiguration.
+\end{DoxyVerb}
+
+
+\begin{DoxyVerb}@brief Configures the LIS radio communications.
+@param lisId The ID of the LIS.
+@return JSON response with the result of the configuration.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ue\+Id} & The ID of the UE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the reconfiguration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source_l00114}{114}} of file \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114\ \textcolor{keyword}{def\ }configure\_radio\_comms(gnbId):}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00116\ \textcolor{stringliteral}{\ \ \ \ @brief\ Creates\ and\ sends\ a\ reconfiguration\ command\ via\ CgNB\ interface\ to\ O-\/CU,\ O-\/DU,\ O-\/RU,\ and\ NT-\/RIC.}}
+\DoxyCodeLine{00117\ \textcolor{stringliteral}{\ \ \ \ @param\ gnbId\ The\ ID\ of\ the\ gNB.}}
+\DoxyCodeLine{00118\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ reconfiguration.}}
+\DoxyCodeLine{00119\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00120\ \ \ \ \ cgnbcf\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'gnb\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ reconfiguration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_aaf2fa88e5957f30692c4d01ea1c97cc7}\index{routes@{routes}!configure\_radio\_sensing@{configure\_radio\_sensing}}
+\index{configure\_radio\_sensing@{configure\_radio\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{configure\_radio\_sensing()}{configure\_radio\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_aaf2fa88e5957f30692c4d01ea1c97cc7} 
+routes.\+configure\+\_\+radio\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Configures the LIS radio sensing.
+@param lisId The ID of the LIS.
+@return JSON response with the result of the configuration.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00180}{180}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \textcolor{keyword}{def\ }configure\_radio\_sensing(lisId):}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00182\ \textcolor{stringliteral}{\ \ \ \ @brief\ Configures\ the\ LIS\ radio\ sensing.}}
+\DoxyCodeLine{00183\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00184\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ configuration.}}
+\DoxyCodeLine{00185\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00186\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Radio\ sensing\ configuration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/sensing/<int:lisId>/status',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a318931a14ef8219b47db13b3dd008c6b}\index{routes@{routes}!configure\_visual\_model@{configure\_visual\_model}}
+\index{configure\_visual\_model@{configure\_visual\_model}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{configure\_visual\_model()}{configure\_visual\_model()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a318931a14ef8219b47db13b3dd008c6b} 
+routes.\+configure\+\_\+visual\+\_\+model (\begin{DoxyParamCaption}\item[{}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Set support vision model configuration based on its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Id} & The ID of the vision model. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the configuration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00113}{113}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \textcolor{keyword}{def\ }configure\_visual\_model(modelId):}
+\DoxyCodeLine{00114\ \ \ \ \ vm\_data\_store.setdefault(modelId,\ \{\})[\textcolor{stringliteral}{'vision\_model\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Vision\ Model\ reconfiguration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00116\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a83f61021dc0e0db323e6d2c67b17b76a}\index{routes@{routes}!control\_ctcf@{control\_ctcf}}
+\index{control\_ctcf@{control\_ctcf}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{control\_ctcf()}{control\_ctcf()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a83f61021dc0e0db323e6d2c67b17b76a} 
+routes.\+control\+\_\+ctcf (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00218}{218}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00218\ \textcolor{keyword}{def\ }control\_ctcf(command,\ ctcfId):}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(400)}
+\DoxyCodeLine{00221\ \ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})[\textcolor{stringliteral}{'control'}]\ =\ command}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/control/\{command\}/\{ctcfId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/configuration/<int:ctcfId>/rules',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}, and \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_ac9fb8f94141dbad10e5205afe7ed8ebf}\index{routes@{routes}!control\_placement@{control\_placement}}
+\index{control\_placement@{control\_placement}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{control\_placement()}{control\_placement()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ac9fb8f94141dbad10e5205afe7ed8ebf} 
+routes.\+control\+\_\+placement (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Sends a Start/Stop command to initiate/stop movement of the LIS.
+@param command The command to execute (start/stop).
+@param lisId The ID of the LIS.
+@return JSON response with the result of the command.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00075}{75}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \textcolor{keyword}{def\ }control\_placement(command,\ lisId):}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00077\ \textcolor{stringliteral}{\ \ \ \ @brief\ Sends\ a\ Start/Stop\ command\ to\ initiate/stop\ movement\ of\ the\ LIS.}}
+\DoxyCodeLine{00078\ \textcolor{stringliteral}{\ \ \ \ @param\ command\ The\ command\ to\ execute\ (start/stop).}}
+\DoxyCodeLine{00079\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00080\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ command.}}
+\DoxyCodeLine{00081\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00084\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'placement\_status'}]\ =\ command}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Placement\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{@app.route('/configuration/placement/<int:lisId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+\Hypertarget{namespaceroutes_ada02cc02f79752b22e20198af0e9cab5}\index{routes@{routes}!control\_radio\_comms@{control\_radio\_comms}}
+\index{control\_radio\_comms@{control\_radio\_comms}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{control\_radio\_comms()}{control\_radio\_comms()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ada02cc02f79752b22e20198af0e9cab5} 
+routes.\+control\+\_\+radio\+\_\+comms (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Sends a Start/Stop command to deploy/reset the configured LIS radio communications.
+@param command The command to execute (start/stop).
+@param lisId The ID of the LIS.
+@return JSON response with the result of the command.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00116}{116}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \textcolor{keyword}{def\ }control\_radio\_comms(command,\ lisId):}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00118\ \textcolor{stringliteral}{\ \ \ \ @brief\ Sends\ a\ Start/Stop\ command\ to\ deploy/reset\ the\ configured\ LIS\ radio\ communications.}}
+\DoxyCodeLine{00119\ \textcolor{stringliteral}{\ \ \ \ @param\ command\ The\ command\ to\ execute\ (start/stop).}}
+\DoxyCodeLine{00120\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00121\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ command.}}
+\DoxyCodeLine{00122\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00125\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_comms\_status'}]\ =\ command}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Radio\ communications\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/comms/<int:lisId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+\Hypertarget{namespaceroutes_a0e1e52cf7c6e223eb30c38968732c1d9}\index{routes@{routes}!control\_radio\_sensing@{control\_radio\_sensing}}
+\index{control\_radio\_sensing@{control\_radio\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{control\_radio\_sensing()}{control\_radio\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a0e1e52cf7c6e223eb30c38968732c1d9} 
+routes.\+control\+\_\+radio\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Sends a Start/Stop command to deploy/reset the configured radio sensing setup.
+@param command The command to execute (start/stop).
+@param lisId The ID of the LIS.
+@return JSON response with the result of the command.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00167}{167}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \textcolor{keyword}{def\ }control\_radio\_sensing(command,\ lisId):}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00169\ \textcolor{stringliteral}{\ \ \ \ @brief\ Sends\ a\ Start/Stop\ command\ to\ deploy/reset\ the\ configured\ radio\ sensing\ setup.}}
+\DoxyCodeLine{00170\ \textcolor{stringliteral}{\ \ \ \ @param\ command\ The\ command\ to\ execute\ (start/stop).}}
+\DoxyCodeLine{00171\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00172\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ command.}}
+\DoxyCodeLine{00173\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00176\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_status'}]\ =\ command}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Radio\ sensing\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/sensing/<int:lisId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+\Hypertarget{namespaceroutes_ac4829c865afdb11438225b1cea677c69}\index{routes@{routes}!cvf\_control\_start@{cvf\_control\_start}}
+\index{cvf\_control\_start@{cvf\_control\_start}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{cvf\_control\_start()}{cvf\_control\_start()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ac4829c865afdb11438225b1cea677c69} 
+routes.\+cvf\+\_\+control\+\_\+start (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{camera\+Id}{}\end{DoxyParamCaption})}
+
+
+
+CVCF sends a start/stop command to the cameras. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to execute (start/stop). \\
+\hline
+{\em camera\+Id} & The ID of the camera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the command. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00070}{70}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \textcolor{keyword}{def\ }cvf\_control\_start(command,\ cameraId):}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00073\ \ \ \ \ cvf\_data\_store.setdefault(cameraId,\ \{\})[\textcolor{stringliteral}{'cvf\_control'}]\ =\ command}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}CV\ control\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00075\ }
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+\Hypertarget{namespaceroutes_a45837ce7645dee8d58b5cb5ab9d6c1e6}\index{routes@{routes}!download\_ml\_model@{download\_ml\_model}}
+\index{download\_ml\_model@{download\_ml\_model}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{download\_ml\_model()}{download\_ml\_model()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a45837ce7645dee8d58b5cb5ab9d6c1e6} 
+routes.\+download\+\_\+ml\+\_\+model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00254}{254}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00254\ \textcolor{keyword}{def\ }download\_ml\_model():}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ml\_model\_store.get(\textcolor{stringliteral}{'model'},\ \{\})),\ 200}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{comment}{\#\ ODR\ Dataset\ Endpoints}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{@app.route('/api/v1/ODR/downlink',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a8880f531703ce930a38645ff1eb8a517}\index{routes@{routes}!download\_odr\_dataset@{download\_odr\_dataset}}
+\index{download\_odr\_dataset@{download\_odr\_dataset}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{download\_odr\_dataset()}{download\_odr\_dataset()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a8880f531703ce930a38645ff1eb8a517} 
+routes.\+download\+\_\+odr\+\_\+dataset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00259}{259}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00259\ \textcolor{keyword}{def\ }download\_odr\_dataset():}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(odr\_dataset\_store.get(\textcolor{stringliteral}{'dataset'},\ \{\})),\ 200}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{@app.route('/api/v1/ODR/upload',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a2685ce7388178cb3759df63ed003531a}\index{routes@{routes}!forward@{forward}}
+\index{forward@{forward}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a2685ce7388178cb3759df63ed003531a} 
+routes.\+forward (\begin{DoxyParamCaption}\item[{}]{base\+Url}{, }\item[{}]{endpoint}{, }\item[{}]{method}{, }\item[{}]{data}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{69}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \textcolor{keyword}{def\ }forward(baseUrl,endpoint,\ method,\ data=None):}
+\DoxyCodeLine{00070\ \ \ \ \ url\ =\ f\textcolor{stringliteral}{"{}\{baseUrl\}\{endpoint\}"{}}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ method\ ==\ \textcolor{stringliteral}{'GET'}:}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.get(url)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ method\ ==\ \textcolor{stringliteral}{'POST'}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.post(url,\ json=data)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ method\ ==\ \textcolor{stringliteral}{'PUT'}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.put(url,\ json=data)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ method\ ==\ \textcolor{stringliteral}{'DELETE'}:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.delete(url)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}error"{}}:\ \textcolor{stringliteral}{"{}Unsupported\ method"{}}\}),\ 405}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ response.raise\_for\_status()\ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(response.json()),\ response.status\_code}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{except}\ requests.exceptions.RequestException\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}error"{}}:\ str(e)\}),\ 500}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{\#\ gNB\ Endpoints}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/placement-\/status/<int:gnbId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00218}{control\+\_\+ctcf()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00225}{get\+\_\+ctcf\+\_\+rules()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00207}{get\+\_\+ctcf\+\_\+status()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00234}{get\+\_\+ctcf\+\_\+telemetry()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00091}{get\+\_\+gnb\+\_\+placement\+\_\+status()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00173}{get\+\_\+lis\+\_\+placement\+\_\+status()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00181}{get\+\_\+lis\+\_\+radio\+\_\+communications\+\_\+status()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00189}{get\+\_\+lis\+\_\+radio\+\_\+sensing\+\_\+status()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00197}{get\+\_\+lis\+\_\+video\+\_\+sensing\+\_\+status()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00229}{setup\+\_\+ctcf\+\_\+rules()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00095}{setup\+\_\+gnb\+\_\+placement()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00177}{setup\+\_\+lis\+\_\+placement()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00185}{setup\+\_\+lis\+\_\+radio\+\_\+communications()}}, \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00193}{setup\+\_\+lis\+\_\+radio\+\_\+sensing()}}, and \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00201}{setup\+\_\+lis\+\_\+video\+\_\+sensing()}}.
+
+\Hypertarget{namespaceroutes_a9aa82ee30b50d7051bca297973525066}\index{routes@{routes}!get\_camera\_configuration@{get\_camera\_configuration}}
+\index{get\_camera\_configuration@{get\_camera\_configuration}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_configuration()}{get\_camera\_configuration()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a9aa82ee30b50d7051bca297973525066} 
+routes.\+get\+\_\+camera\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{camera\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get camera configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\+Id} & The ID of the camera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current configuration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00095}{95}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \textcolor{keyword}{def\ }get\_camera\_configuration(cameraId):}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cvf\_data\_store.get(cameraId,\ \{\}).get(\textcolor{stringliteral}{'camera\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{00097\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_af68b5423ecb125b7b2c0414af1440211}\index{routes@{routes}!get\_camera\_status@{get\_camera\_status}}
+\index{get\_camera\_status@{get\_camera\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_status()}{get\_camera\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_af68b5423ecb125b7b2c0414af1440211} 
+routes.\+get\+\_\+camera\+\_\+status (\begin{DoxyParamCaption}\item[{}]{camera\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get camera status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\+Id} & The ID of the camera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current status. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00088}{88}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \textcolor{keyword}{def\ }get\_camera\_status(cameraId):}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cvf\_data\_store.get(cameraId,\ \{\}).get(\textcolor{stringliteral}{'camera\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00090\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a6cc67b927fa1fa0fdfad218acab99211}\index{routes@{routes}!get\_ctcf\_rules@{get\_ctcf\_rules}}
+\index{get\_ctcf\_rules@{get\_ctcf\_rules}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ctcf\_rules()}{get\_ctcf\_rules()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a6cc67b927fa1fa0fdfad218acab99211} 
+routes.\+get\+\_\+ctcf\+\_\+rules (\begin{DoxyParamCaption}\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00225}{225}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00225\ \textcolor{keyword}{def\ }get\_ctcf\_rules(ctcfId):}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ \ forward(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/\{ctcfId\}/rules"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/configuration/<int:ctcfId>/rules',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a2bab26910cbb03d211f6b0a29731bb31}\index{routes@{routes}!get\_ctcf\_status@{get\_ctcf\_status}}
+\index{get\_ctcf\_status@{get\_ctcf\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ctcf\_status()}{get\_ctcf\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a2bab26910cbb03d211f6b0a29731bb31} 
+routes.\+get\+\_\+ctcf\+\_\+status (\begin{DoxyParamCaption}\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00207}{207}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207\ \textcolor{keyword}{def\ }get\_ctcf\_status(ctcfId):}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/placement/\{ctcfId\}/status"{}},\textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{00211\ \textcolor{stringliteral}{@app.route('/api/v1/CTCF/setup/<int:ctcfId>',\ methods=['POST'])}}
+\DoxyCodeLine{00212\ \textcolor{stringliteral}{def\ setup\_ctcf(ctcfId):}}
+\DoxyCodeLine{00213\ \textcolor{stringliteral}{\ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})['status']\ =\ request.json}}
+\DoxyCodeLine{00214\ \textcolor{stringliteral}{\ \ \ \ return\ jsonify(\{"{}result"{}:\ "{}CTCF\ setup\ successful"{}\}),\ 201}}
+\DoxyCodeLine{00215\ \textcolor{stringliteral}{'''}\ }
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/control/<string:command>/<int:ctcfId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_ac0cf40b9056b2f2760359dcfa97053da}\index{routes@{routes}!get\_ctcf\_telemetry@{get\_ctcf\_telemetry}}
+\index{get\_ctcf\_telemetry@{get\_ctcf\_telemetry}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ctcf\_telemetry()}{get\_ctcf\_telemetry()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ac0cf40b9056b2f2760359dcfa97053da} 
+routes.\+get\+\_\+ctcf\+\_\+telemetry (\begin{DoxyParamCaption}\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00234}{234}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00234\ \textcolor{keyword}{def\ }get\_ctcf\_telemetry(ctcfId):}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/telemetry/\{ctcfId\}"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{comment}{\#\ NET-\/S\ Endpoints}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{@app.route('/api/v1/NETS/status',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a692f82cc48d5024a765e622748734716}\index{routes@{routes}!get\_experiment\_status@{get\_experiment\_status}}
+\index{get\_experiment\_status@{get\_experiment\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_experiment\_status()}{get\_experiment\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a692f82cc48d5024a765e622748734716} 
+routes.\+get\+\_\+experiment\+\_\+status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00269}{269}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00269\ \textcolor{keyword}{def\ }get\_experiment\_status():}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(experiment\_status\_store.get(\textcolor{stringliteral}{'status'},\ \{\})),\ 200}
+\DoxyCodeLine{00271\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a00d5f3322748495c6fb4beb8a30537ae}\index{routes@{routes}!get\_gnb\_configuration@{get\_gnb\_configuration}}
+\index{get\_gnb\_configuration@{get\_gnb\_configuration}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_gnb\_configuration()}{get\_gnb\_configuration()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a00d5f3322748495c6fb4beb8a30537ae} 
+routes.\+get\+\_\+gnb\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Cg\+NB Configuration Status Get the current Cg\+NB configuration. 
+
+\begin{DoxyVerb}@brief Gets the current CgNB configuration.
+@param gnbId The ID of the gNB.
+@return JSON response with the current configuration.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source_l00092}{92}} of file \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \textcolor{keyword}{def\ }get\_gnb\_configuration(gnbId):}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00094\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ current\ CgNB\ configuration.}}
+\DoxyCodeLine{00095\ \textcolor{stringliteral}{\ \ \ \ @param\ gnbId\ The\ ID\ of\ the\ gNB.}}
+\DoxyCodeLine{00096\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ configuration.}}
+\DoxyCodeLine{00097\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cgnbcf\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'gnb\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{00099\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_af49e4106cb25dedf3d62777e692e7a07}\index{routes@{routes}!get\_gnb\_placement\_status@{get\_gnb\_placement\_status}}
+\index{get\_gnb\_placement\_status@{get\_gnb\_placement\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_gnb\_placement\_status()}{get\_gnb\_placement\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_af49e4106cb25dedf3d62777e692e7a07} 
+routes.\+get\+\_\+gnb\+\_\+placement\+\_\+status (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00091}{91}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \textcolor{keyword}{def\ }get\_gnb\_placement\_status(gnbId):}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CgNBCF\_API\_BASE\_URL,\textcolor{stringliteral}{'/configuration/\{gnbId\}'},\ \textcolor{stringliteral}{'GET'},)}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/placement-\/setup/<int:gnbId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a912233f796092993e1b37220a574b1bb}\index{routes@{routes}!get\_gnb\_radio\_communications\_status@{get\_gnb\_radio\_communications\_status}}
+\index{get\_gnb\_radio\_communications\_status@{get\_gnb\_radio\_communications\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_gnb\_radio\_communications\_status()}{get\_gnb\_radio\_communications\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a912233f796092993e1b37220a574b1bb} 
+routes.\+get\+\_\+gnb\+\_\+radio\+\_\+communications\+\_\+status (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00099}{99}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \textcolor{keyword}{def\ }get\_gnb\_radio\_communications\_status(gnbId):}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'radio\_communications\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiocommunications-\/setup/<int:gnbId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a56449f20355eea281af1bd96f87bc7be}\index{routes@{routes}!get\_gnb\_radio\_sensing\_status@{get\_gnb\_radio\_sensing\_status}}
+\index{get\_gnb\_radio\_sensing\_status@{get\_gnb\_radio\_sensing\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_gnb\_radio\_sensing\_status()}{get\_gnb\_radio\_sensing\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a56449f20355eea281af1bd96f87bc7be} 
+routes.\+get\+\_\+gnb\+\_\+radio\+\_\+sensing\+\_\+status (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00108}{108}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \textcolor{keyword}{def\ }get\_gnb\_radio\_sensing\_status(gnbId):}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'radio\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiosensing-\/setup/<int:gnbId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a602ba0605848ce83212285a9b234d27a}\index{routes@{routes}!get\_gnb\_status@{get\_gnb\_status}}
+\index{get\_gnb\_status@{get\_gnb\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_gnb\_status()}{get\_gnb\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a602ba0605848ce83212285a9b234d27a} 
+routes.\+get\+\_\+gnb\+\_\+status (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Cg\+NB Status Get the current Cg\+NB status. 
+
+\begin{DoxyVerb}@brief Gets the current CgNB status.
+@param gnbId The ID of the gNB.
+@return JSON response with the current status.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source_l00103}{103}} of file \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \textcolor{keyword}{def\ }get\_gnb\_status(gnbId):}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00105\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ current\ CgNB\ status.}}
+\DoxyCodeLine{00106\ \textcolor{stringliteral}{\ \ \ \ @param\ gnbId\ The\ ID\ of\ the\ gNB.}}
+\DoxyCodeLine{00107\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ status.}}
+\DoxyCodeLine{00108\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cgnbcf\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'gnb\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00110\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_aaed703fef3538e3710445470e5c70a4a}\index{routes@{routes}!get\_gnb\_video\_sensing\_status@{get\_gnb\_video\_sensing\_status}}
+\index{get\_gnb\_video\_sensing\_status@{get\_gnb\_video\_sensing\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_gnb\_video\_sensing\_status()}{get\_gnb\_video\_sensing\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_aaed703fef3538e3710445470e5c70a4a} 
+routes.\+get\+\_\+gnb\+\_\+video\+\_\+sensing\+\_\+status (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00117}{117}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \textcolor{keyword}{def\ }get\_gnb\_video\_sensing\_status(gnbId):}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'video\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/videosensing-\/setup/<int:gnbId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_aca2d3a8c9593ce33e40d9fd061611ca2}\index{routes@{routes}!get\_gnb\_xapp\_status@{get\_gnb\_xapp\_status}}
+\index{get\_gnb\_xapp\_status@{get\_gnb\_xapp\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_gnb\_xapp\_status()}{get\_gnb\_xapp\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_aca2d3a8c9593ce33e40d9fd061611ca2} 
+routes.\+get\+\_\+gnb\+\_\+xapp\+\_\+status (\begin{DoxyParamCaption}\item[{}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00126}{126}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00126\ \textcolor{keyword}{def\ }get\_gnb\_xapp\_status(id):}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(id,\ \{\}).get(\textcolor{stringliteral}{'xapp\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/xapp-\/setup/<int:id>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a6e263f7253ee73661633e9c7be9c5118}\index{routes@{routes}!get\_lis\_placement\_status@{get\_lis\_placement\_status}}
+\index{get\_lis\_placement\_status@{get\_lis\_placement\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_lis\_placement\_status()}{get\_lis\_placement\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a6e263f7253ee73661633e9c7be9c5118} 
+routes.\+get\+\_\+lis\+\_\+placement\+\_\+status (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00173}{173}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \textcolor{keyword}{def\ }get\_lis\_placement\_status(lisId):}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/placement/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/placement-\/setup/<int:lisId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a5825ec0d3589431b5c4bfafce02992df}\index{routes@{routes}!get\_lis\_radio\_communications\_status@{get\_lis\_radio\_communications\_status}}
+\index{get\_lis\_radio\_communications\_status@{get\_lis\_radio\_communications\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_lis\_radio\_communications\_status()}{get\_lis\_radio\_communications\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a5825ec0d3589431b5c4bfafce02992df} 
+routes.\+get\+\_\+lis\+\_\+radio\+\_\+communications\+\_\+status (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00181}{181}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00181\ \textcolor{keyword}{def\ }get\_lis\_radio\_communications\_status(lisId):}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/comms/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiocommunications-\/setup/<int:lisId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_ad9e5c87f5482841865a6a7861d8ba706}\index{routes@{routes}!get\_lis\_radio\_sensing\_status@{get\_lis\_radio\_sensing\_status}}
+\index{get\_lis\_radio\_sensing\_status@{get\_lis\_radio\_sensing\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_lis\_radio\_sensing\_status()}{get\_lis\_radio\_sensing\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ad9e5c87f5482841865a6a7861d8ba706} 
+routes.\+get\+\_\+lis\+\_\+radio\+\_\+sensing\+\_\+status (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00189}{189}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \textcolor{keyword}{def\ }get\_lis\_radio\_sensing\_status(lisId):}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/sensing/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiosensing-\/setup/<int:lisId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_af0ae0a15e3a03ee4c724272859697c63}\index{routes@{routes}!get\_lis\_video\_sensing\_status@{get\_lis\_video\_sensing\_status}}
+\index{get\_lis\_video\_sensing\_status@{get\_lis\_video\_sensing\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_lis\_video\_sensing\_status()}{get\_lis\_video\_sensing\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_af0ae0a15e3a03ee4c724272859697c63} 
+routes.\+get\+\_\+lis\+\_\+video\+\_\+sensing\+\_\+status (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00197}{197}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197\ \textcolor{keyword}{def\ }get\_lis\_video\_sensing\_status(lisId):}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/video-\/sensing/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/videosensing-\/setup/<int:lisId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_afee1eb907f39641dd9a672e2596e0d72}\index{routes@{routes}!get\_nets\_status@{get\_nets\_status}}
+\index{get\_nets\_status@{get\_nets\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_nets\_status()}{get\_nets\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_afee1eb907f39641dd9a672e2596e0d72} 
+routes.\+get\+\_\+nets\+\_\+status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00240}{240}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00240\ \textcolor{keyword}{def\ }get\_nets\_status():}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}status"{}}:\ \textcolor{stringliteral}{"{}NET-\/S\ operational"{}}\}),\ 200}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{@app.route('/api/v1/NETS/setup',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_afb0c1f18fd863b72709aaad3fbedddc0}\index{routes@{routes}!get\_placement\_configuration@{get\_placement\_configuration}}
+\index{get\_placement\_configuration@{get\_placement\_configuration}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_placement\_configuration()}{get\_placement\_configuration()}}
+{\footnotesize\ttfamily \label{namespaceroutes_afb0c1f18fd863b72709aaad3fbedddc0} 
+routes.\+get\+\_\+placement\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Gets the current LIS placement configuration.
+@param lisId The ID of the LIS.
+@return JSON response with the current configuration.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00098}{98}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \textcolor{keyword}{def\ }get\_placement\_configuration(lisId):}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00100\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ current\ LIS\ placement\ configuration.}}
+\DoxyCodeLine{00101\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00102\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ configuration.}}
+\DoxyCodeLine{00103\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'placement\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{@app.route('/configuration/placement/<int:lisId>/status',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a9a1cfb28baef8c58b0367777e062e1a0}\index{routes@{routes}!get\_placement\_status@{get\_placement\_status}}
+\index{get\_placement\_status@{get\_placement\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_placement\_status()}{get\_placement\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a9a1cfb28baef8c58b0367777e062e1a0} 
+routes.\+get\+\_\+placement\+\_\+status (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Gets the current LIS placement status.
+@param lisId The ID of the LIS.
+@return JSON response with the current status.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00107}{107}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \textcolor{keyword}{def\ }get\_placement\_status(lisId):}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00109\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ current\ LIS\ placement\ status.}}
+\DoxyCodeLine{00110\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00111\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ status.}}
+\DoxyCodeLine{00112\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'placement\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{@app.route('/control/radio-\/comms/<int:lisId>/<string:command>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a76729938f5c858b82ab150efe76ae00c}\index{routes@{routes}!get\_radio\_comms\_configuration@{get\_radio\_comms\_configuration}}
+\index{get\_radio\_comms\_configuration@{get\_radio\_comms\_configuration}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_radio\_comms\_configuration()}{get\_radio\_comms\_configuration()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a76729938f5c858b82ab150efe76ae00c} 
+routes.\+get\+\_\+radio\+\_\+comms\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Gets the LIS radio communication configuration.
+@param lisId The ID of the LIS.
+@return JSON response with the current configuration.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00149}{149}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149\ \textcolor{keyword}{def\ }get\_radio\_comms\_configuration(lisId):}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00151\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ LIS\ radio\ communication\ configuration.}}
+\DoxyCodeLine{00152\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00153\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ configuration.}}
+\DoxyCodeLine{00154\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'radio\_comms\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/comms/<int:lisId>/status',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_ae21b79f8d287d5b9f3d8cfc86ee9e310}\index{routes@{routes}!get\_radio\_comms\_status@{get\_radio\_comms\_status}}
+\index{get\_radio\_comms\_status@{get\_radio\_comms\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_radio\_comms\_status()}{get\_radio\_comms\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ae21b79f8d287d5b9f3d8cfc86ee9e310} 
+routes.\+get\+\_\+radio\+\_\+comms\+\_\+status (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Gets the LIS radio communication status.
+@param lisId The ID of the LIS.
+@return JSON response with the current status.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00158}{158}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \textcolor{keyword}{def\ }get\_radio\_comms\_status(lisId):}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00160\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ LIS\ radio\ communication\ status.}}
+\DoxyCodeLine{00161\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00162\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ status.}}
+\DoxyCodeLine{00163\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'radio\_comms\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{@app.route('/control/radio-\/sensing/<int:lisId>/<string:command>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a27e0f2294f6bf336090b849df23d14ba}\index{routes@{routes}!get\_radio\_sensing\_status@{get\_radio\_sensing\_status}}
+\index{get\_radio\_sensing\_status@{get\_radio\_sensing\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_radio\_sensing\_status()}{get\_radio\_sensing\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a27e0f2294f6bf336090b849df23d14ba} 
+routes.\+get\+\_\+radio\+\_\+sensing\+\_\+status (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Gets the LIS radio sensing status.
+@param lisId The ID of the LIS.
+@return JSON response with the current status.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00190}{190}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00190\ \textcolor{keyword}{def\ }get\_radio\_sensing\_status(lisId):}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00192\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ LIS\ radio\ sensing\ status.}}
+\DoxyCodeLine{00193\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00194\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ status.}}
+\DoxyCodeLine{00195\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'radio\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00197\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a13d0baf8850620bb45d56d1d50357c69}\index{routes@{routes}!get\_traffic\_control\_rules@{get\_traffic\_control\_rules}}
+\index{get\_traffic\_control\_rules@{get\_traffic\_control\_rules}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_traffic\_control\_rules()}{get\_traffic\_control\_rules()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a13d0baf8850620bb45d56d1d50357c69} 
+routes.\+get\+\_\+traffic\+\_\+control\+\_\+rules (\begin{DoxyParamCaption}\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get the current traffic control rules configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctcf\+Id} & The ID of the CTCF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current configuration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_t_c_f_2routes_8py_source_l00087}{87}} of file \mbox{\hyperlink{_c_t_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \textcolor{keyword}{def\ }get\_traffic\_control\_rules(ctcfId):}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ctcf\_data\_store.get(ctcfId,\ \{\}).get(\textcolor{stringliteral}{'ctcf\_rules'},\ \{\})),\ 200}
+\DoxyCodeLine{00089\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_aae8ceb400551a95ae95a2fe1b8468d18}\index{routes@{routes}!get\_traffic\_statistics@{get\_traffic\_statistics}}
+\index{get\_traffic\_statistics@{get\_traffic\_statistics}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_traffic\_statistics()}{get\_traffic\_statistics()}}
+{\footnotesize\ttfamily \label{namespaceroutes_aae8ceb400551a95ae95a2fe1b8468d18} 
+routes.\+get\+\_\+traffic\+\_\+statistics (\begin{DoxyParamCaption}\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get statistics related to traffic control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctcf\+Id} & The ID of the CTCF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current statistics. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_t_c_f_2routes_8py_source_l00102}{102}} of file \mbox{\hyperlink{_c_t_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \textcolor{keyword}{def\ }get\_traffic\_statistics(ctcfId):}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ctcf\_data\_store.get(ctcfId,\ \{\}).get(\textcolor{stringliteral}{'traffic\_statistics'},\ \{\})),\ 200}
+\DoxyCodeLine{00104\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a36c13fa063e7e99ba0e864158c7be96f}\index{routes@{routes}!get\_ue\_configuration@{get\_ue\_configuration}}
+\index{get\_ue\_configuration@{get\_ue\_configuration}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ue\_configuration()}{get\_ue\_configuration()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a36c13fa063e7e99ba0e864158c7be96f} 
+routes.\+get\+\_\+ue\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get the current CUE configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ue\+Id} & The ID of the UE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current configuration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_u_e_c_f_2routes_8py_source_l00079}{79}} of file \mbox{\hyperlink{_c_u_e_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \textcolor{keyword}{def\ }get\_ue\_configuration(ueId):}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cuecf\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'ue\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{00081\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a16abe2cf56da9883f27c40680ec2f200}\index{routes@{routes}!get\_ue\_placement\_status@{get\_ue\_placement\_status}}
+\index{get\_ue\_placement\_status@{get\_ue\_placement\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ue\_placement\_status()}{get\_ue\_placement\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a16abe2cf56da9883f27c40680ec2f200} 
+routes.\+get\+\_\+ue\+\_\+placement\+\_\+status (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00136}{136}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \textcolor{keyword}{def\ }get\_ue\_placement\_status(ueId):}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'placement\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{@app.route('/api/v1/UE/placement-\/setup/<int:ueId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a77fafc3be371431fdd3ea43fce38bd69}\index{routes@{routes}!get\_ue\_radio\_communications\_status@{get\_ue\_radio\_communications\_status}}
+\index{get\_ue\_radio\_communications\_status@{get\_ue\_radio\_communications\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ue\_radio\_communications\_status()}{get\_ue\_radio\_communications\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a77fafc3be371431fdd3ea43fce38bd69} 
+routes.\+get\+\_\+ue\+\_\+radio\+\_\+communications\+\_\+status (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00145}{145}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00145\ \textcolor{keyword}{def\ }get\_ue\_radio\_communications\_status(ueId):}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'radio\_communications\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiocommunications-\/setup/<int:ueId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_ac30617705b6f90a90629ef686b7e29b9}\index{routes@{routes}!get\_ue\_radio\_sensing\_status@{get\_ue\_radio\_sensing\_status}}
+\index{get\_ue\_radio\_sensing\_status@{get\_ue\_radio\_sensing\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ue\_radio\_sensing\_status()}{get\_ue\_radio\_sensing\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ac30617705b6f90a90629ef686b7e29b9} 
+routes.\+get\+\_\+ue\+\_\+radio\+\_\+sensing\+\_\+status (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00154}{154}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00154\ \textcolor{keyword}{def\ }get\_ue\_radio\_sensing\_status(ueId):}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'radio\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiosensing-\/setup/<int:ueId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_ab756ff2567fc3ebe1ed2ac6a3e3bcdf8}\index{routes@{routes}!get\_ue\_status@{get\_ue\_status}}
+\index{get\_ue\_status@{get\_ue\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ue\_status()}{get\_ue\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ab756ff2567fc3ebe1ed2ac6a3e3bcdf8} 
+routes.\+get\+\_\+ue\+\_\+status (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get the current CUE status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ue\+Id} & The ID of the UE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current status. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_u_e_c_f_2routes_8py_source_l00086}{86}} of file \mbox{\hyperlink{_c_u_e_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \textcolor{keyword}{def\ }get\_ue\_status(ueId):}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cuecf\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'ue\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00088\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a22b1361e16de5ee209338740d36b20a6}\index{routes@{routes}!get\_ue\_video\_sensing\_status@{get\_ue\_video\_sensing\_status}}
+\index{get\_ue\_video\_sensing\_status@{get\_ue\_video\_sensing\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_ue\_video\_sensing\_status()}{get\_ue\_video\_sensing\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a22b1361e16de5ee209338740d36b20a6} 
+routes.\+get\+\_\+ue\+\_\+video\+\_\+sensing\+\_\+status (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00163}{163}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \textcolor{keyword}{def\ }get\_ue\_video\_sensing\_status(ueId):}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'video\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{@app.route('/api/v1/UE/videosensing-\/setup/<int:ueId>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a98ab20b7fc92e527ee039de9d8c058db}\index{routes@{routes}!get\_vision\_model\_configuration@{get\_vision\_model\_configuration}}
+\index{get\_vision\_model\_configuration@{get\_vision\_model\_configuration}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_vision\_model\_configuration()}{get\_vision\_model\_configuration()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a98ab20b7fc92e527ee039de9d8c058db} 
+routes.\+get\+\_\+vision\+\_\+model\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get support vision model configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Id} & The ID of the vision model. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current configuration. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00121}{121}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \textcolor{keyword}{def\ }get\_vision\_model\_configuration(modelId):}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(vm\_data\_store.get(modelId,\ \{\}).get(\textcolor{stringliteral}{'vision\_model\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{00123\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_ad1fd354e163c974788e7568052bba33d}\index{routes@{routes}!get\_vision\_model\_status@{get\_vision\_model\_status}}
+\index{get\_vision\_model\_status@{get\_vision\_model\_status}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{get\_vision\_model\_status()}{get\_vision\_model\_status()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ad1fd354e163c974788e7568052bba33d} 
+routes.\+get\+\_\+vision\+\_\+model\+\_\+status (\begin{DoxyParamCaption}\item[{}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Get support vision model status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Id} & The ID of the vision model. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the current status. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00128}{128}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \textcolor{keyword}{def\ }get\_vision\_model\_status(modelId):}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(vm\_data\_store.get(modelId,\ \{\}).get(\textcolor{stringliteral}{'vision\_model\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a56d4e0355ebab28bae5f7456105b3ff3}\index{routes@{routes}!gnb\_control\_start@{gnb\_control\_start}}
+\index{gnb\_control\_start@{gnb\_control\_start}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{gnb\_control\_start()}{gnb\_control\_start()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a56d4e0355ebab28bae5f7456105b3ff3} 
+routes.\+gnb\+\_\+control\+\_\+start (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Cg\+NB Start/\+Stop Cg\+NB sends Start/\+Stop command to NT-\/\+RIC, O-\/\+CU, O-\/\+DU and O-\/\+RU. 
+
+\begin{DoxyVerb}@brief Sends start/stop command to NT-RIC, O-CU, O-DU, and O-RU.
+@param command The command to execute (start/stop).
+@param gnbId The ID of the gNB.
+@return JSON response with the result of the command.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source_l00077}{77}} of file \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \textcolor{keyword}{def\ }gnb\_control\_start(command,\ gnbId):}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00079\ \textcolor{stringliteral}{\ \ \ \ @brief\ Sends\ start/stop\ command\ to\ NT-\/RIC,\ O-\/CU,\ O-\/DU,\ and\ O-\/RU.}}
+\DoxyCodeLine{00080\ \textcolor{stringliteral}{\ \ \ \ @param\ command\ The\ command\ to\ execute\ (start/stop).}}
+\DoxyCodeLine{00081\ \textcolor{stringliteral}{\ \ \ \ @param\ gnbId\ The\ ID\ of\ the\ gNB.}}
+\DoxyCodeLine{00082\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ command.}}
+\DoxyCodeLine{00083\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00086\ \ \ \ \ cgnbcf\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'gnb\_control'}]\ =\ command}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}gNB\ control\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00088\ }
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+\Hypertarget{namespaceroutes_a3835b86d14fc4e361f491cdd5162117f}\index{routes@{routes}!internal\_error@{internal\_error}}
+\index{internal\_error@{internal\_error}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{internal\_error()}{internal\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceroutes_a3835b86d14fc4e361f491cdd5162117f} 
+routes.\+internal\+\_\+error (\begin{DoxyParamCaption}\item[{error}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Handles 500 errors.
+@param error The error object.
+@return JSON response with error details.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00057}{57}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \textcolor{keyword}{def\ }internal\_error(error):}
+\DoxyCodeLine{00058\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Internal\ Server\ Error"{}},}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 500,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}An\ unexpected\ error\ occurred\ on\ the\ server."{}},}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 500}
+\DoxyCodeLine{00068\ }
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a4b430e64de2b9ef01438a94995324578}\index{routes@{routes}!internal\_error@{internal\_error}}
+\index{internal\_error@{internal\_error}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{internal\_error()}{internal\_error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceroutes_a4b430e64de2b9ef01438a94995324578} 
+routes.\+internal\+\_\+error (\begin{DoxyParamCaption}\item[{}]{error}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Handles 500 errors.
+@param error The error object.
+@return JSON response with error details.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00057}{57}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \textcolor{keyword}{def\ }internal\_error(error):}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00059\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 500\ errors.}}
+\DoxyCodeLine{00060\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{00061\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{00062\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00063\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}:\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}:\ \textcolor{stringliteral}{"{}Internal\ Server\ Error"{}},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}:\ 500,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}:\ \textcolor{stringliteral}{"{}An\ unexpected\ error\ occurred\ on\ the\ server."{}},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}:\ request.url}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 500}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{@app.route('/control/placement/<int:lisId>/<string:command>',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_aee4a97c099b5f41402c9bc3cba9044e1}\index{routes@{routes}!not\_found@{not\_found}}
+\index{not\_found@{not\_found}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{not\_found()}{not\_found()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespaceroutes_aee4a97c099b5f41402c9bc3cba9044e1} 
+routes.\+not\+\_\+found (\begin{DoxyParamCaption}\item[{error}]{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Handles 404 errors.
+@param error The error object.
+@return JSON response with error details.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00031}{31}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \textcolor{keyword}{def\ }not\_found(error):}
+\DoxyCodeLine{00032\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Resource\ Not\ Found"{}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 404,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}The\ resource\ you\ requested\ was\ not\ found."{}},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 404}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{@app.errorhandler(400)}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a11c01782ff3258beecb164495bdb3c95}\index{routes@{routes}!not\_found@{not\_found}}
+\index{not\_found@{not\_found}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{not\_found()}{not\_found()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespaceroutes_a11c01782ff3258beecb164495bdb3c95} 
+routes.\+not\+\_\+found (\begin{DoxyParamCaption}\item[{}]{error}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Handles 404 errors.
+@param error The error object.
+@return JSON response with error details.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00021}{21}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \textcolor{keyword}{def\ }not\_found(error):}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00023\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 404\ errors.}}
+\DoxyCodeLine{00024\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{00025\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{00026\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00027\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}:\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}:\ \textcolor{stringliteral}{"{}Resource\ Not\ Found"{}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}:\ 404,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}:\ \textcolor{stringliteral}{"{}The\ resource\ you\ requested\ was\ not\ found."{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}:\ request.url}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 404}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{@app.errorhandler(400)}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a81356f95eb23145423c2fa04adc57e2a}\index{routes@{routes}!radio\_comms\_feedback@{radio\_comms\_feedback}}
+\index{radio\_comms\_feedback@{radio\_comms\_feedback}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{radio\_comms\_feedback()}{radio\_comms\_feedback()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a81356f95eb23145423c2fa04adc57e2a} 
+routes.\+radio\+\_\+comms\+\_\+feedback (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Enables the provision of feedback in terms of UE received power, to allow for automatic beam calibration.
+@param lisId The ID of the LIS.
+@return JSON response with the result of the feedback.
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00139}{139}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \textcolor{keyword}{def\ }radio\_comms\_feedback(lisId):}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00141\ \textcolor{stringliteral}{\ \ \ \ @brief\ Enables\ the\ provision\ of\ feedback\ in\ terms\ of\ UE\ received\ power,\ to\ allow\ for\ automatic\ beam\ calibration.}}
+\DoxyCodeLine{00142\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{00143\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ feedback.}}
+\DoxyCodeLine{00144\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00145\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_comms\_feedback'}]\ =\ request.json}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Radio\ communications\ feedback\ received"{}}\}),\ 201}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/comms/<int:lisId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a96394345325bc7219d2344675c00fef2}\index{routes@{routes}!setup\_ctcf\_rules@{setup\_ctcf\_rules}}
+\index{setup\_ctcf\_rules@{setup\_ctcf\_rules}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_ctcf\_rules()}{setup\_ctcf\_rules()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a96394345325bc7219d2344675c00fef2} 
+routes.\+setup\+\_\+ctcf\+\_\+rules (\begin{DoxyParamCaption}\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00229}{229}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00229\ \textcolor{keyword}{def\ }setup\_ctcf\_rules(ctcfId):}
+\DoxyCodeLine{00230\ \ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})[\textcolor{stringliteral}{'rules'}]\ =\ request.json}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/\{ctcfId\}/rules"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/telemetry/<int:ctcfId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a18ad2f57b5dd4beec9c1d8365fbd7293}\index{routes@{routes}!setup\_gnb\_placement@{setup\_gnb\_placement}}
+\index{setup\_gnb\_placement@{setup\_gnb\_placement}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_gnb\_placement()}{setup\_gnb\_placement()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a18ad2f57b5dd4beec9c1d8365fbd7293} 
+routes.\+setup\+\_\+gnb\+\_\+placement (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00095}{95}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \textcolor{keyword}{def\ }setup\_gnb\_placement(gnbId):}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CgNBCF\_API\_BASE\_URL,\textcolor{stringliteral}{'/configuration/\{gnbId\}'},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiocommunications-\/status/<int:gnbId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a4bb1c2c35f3d6dbf8337c281b6e1cb5e}\index{routes@{routes}!setup\_gnb\_radio\_communications@{setup\_gnb\_radio\_communications}}
+\index{setup\_gnb\_radio\_communications@{setup\_gnb\_radio\_communications}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_gnb\_radio\_communications()}{setup\_gnb\_radio\_communications()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a4bb1c2c35f3d6dbf8337c281b6e1cb5e} 
+routes.\+setup\+\_\+gnb\+\_\+radio\+\_\+communications (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00103}{103}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \textcolor{keyword}{def\ }setup\_gnb\_radio\_communications(gnbId):}
+\DoxyCodeLine{00104\ \ \ \ \ gnb\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'radio\_communications\_status'}]\ =\ request.json}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ radio\ communications\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiosensing-\/status/<int:gnbId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a17d2ad472d06b0ebc70c61da7cd53d9b}\index{routes@{routes}!setup\_gnb\_radio\_sensing@{setup\_gnb\_radio\_sensing}}
+\index{setup\_gnb\_radio\_sensing@{setup\_gnb\_radio\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_gnb\_radio\_sensing()}{setup\_gnb\_radio\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a17d2ad472d06b0ebc70c61da7cd53d9b} 
+routes.\+setup\+\_\+gnb\+\_\+radio\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00112}{112}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \textcolor{keyword}{def\ }setup\_gnb\_radio\_sensing(gnbId):}
+\DoxyCodeLine{00113\ \ \ \ \ gnb\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ radio\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/videosensing-\/status/<int:gnbId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a64b7dca1cb64c2fdd3aef5aa0afadb90}\index{routes@{routes}!setup\_gnb\_video\_sensing@{setup\_gnb\_video\_sensing}}
+\index{setup\_gnb\_video\_sensing@{setup\_gnb\_video\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_gnb\_video\_sensing()}{setup\_gnb\_video\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a64b7dca1cb64c2fdd3aef5aa0afadb90} 
+routes.\+setup\+\_\+gnb\+\_\+video\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{gnb\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00121}{121}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \textcolor{keyword}{def\ }setup\_gnb\_video\_sensing(gnbId):}
+\DoxyCodeLine{00122\ \ \ \ \ gnb\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'video\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ video\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/xapp-\/status/<int:id>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_ad299ca060a291e7f925088f2bd615d45}\index{routes@{routes}!setup\_lis\_placement@{setup\_lis\_placement}}
+\index{setup\_lis\_placement@{setup\_lis\_placement}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_lis\_placement()}{setup\_lis\_placement()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ad299ca060a291e7f925088f2bd615d45} 
+routes.\+setup\+\_\+lis\+\_\+placement (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00177}{177}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177\ \textcolor{keyword}{def\ }setup\_lis\_placement(lisId):}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/placement/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiocommunications-\/status/<int:lisId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_ab06c2dcdaad7ef2385c587a0beff5730}\index{routes@{routes}!setup\_lis\_radio\_communications@{setup\_lis\_radio\_communications}}
+\index{setup\_lis\_radio\_communications@{setup\_lis\_radio\_communications}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_lis\_radio\_communications()}{setup\_lis\_radio\_communications()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ab06c2dcdaad7ef2385c587a0beff5730} 
+routes.\+setup\+\_\+lis\+\_\+radio\+\_\+communications (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00185}{185}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185\ \textcolor{keyword}{def\ }setup\_lis\_radio\_communications(lisId):}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/comms/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiosensing-\/status/<int:lisId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a68ef295de05d13b18702f4d68f901a1b}\index{routes@{routes}!setup\_lis\_radio\_sensing@{setup\_lis\_radio\_sensing}}
+\index{setup\_lis\_radio\_sensing@{setup\_lis\_radio\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_lis\_radio\_sensing()}{setup\_lis\_radio\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a68ef295de05d13b18702f4d68f901a1b} 
+routes.\+setup\+\_\+lis\+\_\+radio\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00193}{193}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00193\ \textcolor{keyword}{def\ }setup\_lis\_radio\_sensing(lisId):}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/sensing/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/videosensing-\/status/<int:lisId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a951108890d5ce6747d395a22a86e88b7}\index{routes@{routes}!setup\_lis\_video\_sensing@{setup\_lis\_video\_sensing}}
+\index{setup\_lis\_video\_sensing@{setup\_lis\_video\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_lis\_video\_sensing()}{setup\_lis\_video\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a951108890d5ce6747d395a22a86e88b7} 
+routes.\+setup\+\_\+lis\+\_\+video\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{lis\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00201}{201}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00201\ \textcolor{keyword}{def\ }setup\_lis\_video\_sensing(lisId):}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{return}\ forward(CLISCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/video-\/sensing/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{\#\ CTCF\ Endpoints}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/status/<int:ctcfId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00069}{forward()}}.
+
+\Hypertarget{namespaceroutes_a1aef58af69c7376232bd85902bb358cb}\index{routes@{routes}!setup\_nets@{setup\_nets}}
+\index{setup\_nets@{setup\_nets}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_nets()}{setup\_nets()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a1aef58af69c7376232bd85902bb358cb} 
+routes.\+setup\+\_\+nets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00244}{244}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00244\ \textcolor{keyword}{def\ }setup\_nets():}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}NET-\/S\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{comment}{\#\ ML\ Model\ Endpoints}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{@app.route('/api/v1/ML/upload',\ methods=['POST'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_adbc1e681ba51410bcaa7b6daa132ae6b}\index{routes@{routes}!setup\_ue\_placement@{setup\_ue\_placement}}
+\index{setup\_ue\_placement@{setup\_ue\_placement}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_ue\_placement()}{setup\_ue\_placement()}}
+{\footnotesize\ttfamily \label{namespaceroutes_adbc1e681ba51410bcaa7b6daa132ae6b} 
+routes.\+setup\+\_\+ue\+\_\+placement (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00140}{140}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \textcolor{keyword}{def\ }setup\_ue\_placement(ueId):}
+\DoxyCodeLine{00141\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'placement\_status'}]\ =\ request.json}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ placement\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiocommunications-\/status/<int:ueId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_adf51db9b7c3a24d5a716976a99fdaa33}\index{routes@{routes}!setup\_ue\_radio\_communications@{setup\_ue\_radio\_communications}}
+\index{setup\_ue\_radio\_communications@{setup\_ue\_radio\_communications}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_ue\_radio\_communications()}{setup\_ue\_radio\_communications()}}
+{\footnotesize\ttfamily \label{namespaceroutes_adf51db9b7c3a24d5a716976a99fdaa33} 
+routes.\+setup\+\_\+ue\+\_\+radio\+\_\+communications (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00149}{149}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149\ \textcolor{keyword}{def\ }setup\_ue\_radio\_communications(ueId):}
+\DoxyCodeLine{00150\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'radio\_communications\_status'}]\ =\ request.json}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ radio\ communications\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiosensing-\/status/<int:ueId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a545a8507a4ea61fb629f41cd9bca63bb}\index{routes@{routes}!setup\_ue\_radio\_sensing@{setup\_ue\_radio\_sensing}}
+\index{setup\_ue\_radio\_sensing@{setup\_ue\_radio\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_ue\_radio\_sensing()}{setup\_ue\_radio\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a545a8507a4ea61fb629f41cd9bca63bb} 
+routes.\+setup\+\_\+ue\+\_\+radio\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00158}{158}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \textcolor{keyword}{def\ }setup\_ue\_radio\_sensing(ueId):}
+\DoxyCodeLine{00159\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ radio\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{@app.route('/api/v1/UE/videosensing-\/status/<int:ueId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_ad1c55935fb8c0b32a9f4f02bb2d6efe2}\index{routes@{routes}!setup\_ue\_video\_sensing@{setup\_ue\_video\_sensing}}
+\index{setup\_ue\_video\_sensing@{setup\_ue\_video\_sensing}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{setup\_ue\_video\_sensing()}{setup\_ue\_video\_sensing()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ad1c55935fb8c0b32a9f4f02bb2d6efe2} 
+routes.\+setup\+\_\+ue\+\_\+video\+\_\+sensing (\begin{DoxyParamCaption}\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00167}{167}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00167\ \textcolor{keyword}{def\ }setup\_ue\_video\_sensing(ueId):}
+\DoxyCodeLine{00168\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'video\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ video\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{comment}{\#\ LIS\ Endpoints}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/placement-\/status/<int:lisId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a8861d0277e1cc500c4b9d746882fe8a6}\index{routes@{routes}!traffic\_control\_start@{traffic\_control\_start}}
+\index{traffic\_control\_start@{traffic\_control\_start}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{traffic\_control\_start()}{traffic\_control\_start()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a8861d0277e1cc500c4b9d746882fe8a6} 
+routes.\+traffic\+\_\+control\+\_\+start (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{ctcf\+Id}{}\end{DoxyParamCaption})}
+
+
+
+CTCF sends a start/stop command to control traffic servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to execute (start/stop). \\
+\hline
+{\em ctcf\+Id} & The ID of the CTCF. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the command. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_t_c_f_2routes_8py_source_l00077}{77}} of file \mbox{\hyperlink{_c_t_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \textcolor{keyword}{def\ }traffic\_control\_start(command,\ ctcfId):}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00080\ \ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})[\textcolor{stringliteral}{'traffic\_control'}]\ =\ command}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Traffic\ Control\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00082\ }
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+\Hypertarget{namespaceroutes_a7e95b73c2d9937fb69d5650ebb582c25}\index{routes@{routes}!ue\_control\_start@{ue\_control\_start}}
+\index{ue\_control\_start@{ue\_control\_start}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{ue\_control\_start()}{ue\_control\_start()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a7e95b73c2d9937fb69d5650ebb582c25} 
+routes.\+ue\+\_\+control\+\_\+start (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{ue\+Id}{}\end{DoxyParamCaption})}
+
+
+
+CUECF sends Start/\+Stop command via CUE interface to the relevant UE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to execute (start/stop). \\
+\hline
+{\em ue\+Id} & The ID of the UE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the command. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_u_e_c_f_2routes_8py_source_l00069}{69}} of file \mbox{\hyperlink{_c_u_e_c_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \textcolor{keyword}{def\ }ue\_control\_start(command,\ ueId):}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00072\ \ \ \ \ cuecf\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'ue\_control'}]\ =\ command}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}UE\ control\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00074\ }
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+\Hypertarget{namespaceroutes_ae7be8be87ffe1dd86b9224825ae63c80}\index{routes@{routes}!upload\_gnb\_xapp@{upload\_gnb\_xapp}}
+\index{upload\_gnb\_xapp@{upload\_gnb\_xapp}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{upload\_gnb\_xapp()}{upload\_gnb\_xapp()}}
+{\footnotesize\ttfamily \label{namespaceroutes_ae7be8be87ffe1dd86b9224825ae63c80} 
+routes.\+upload\+\_\+gnb\+\_\+xapp (\begin{DoxyParamCaption}\item[{}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00130}{130}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \textcolor{keyword}{def\ }upload\_gnb\_xapp(id):}
+\DoxyCodeLine{00131\ \ \ \ \ gnb\_data\_store.setdefault(id,\ \{\})[\textcolor{stringliteral}{'xapp\_status'}]\ =\ request.json}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ x-\/APP\ upload\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{\#\ UE\ Endpoints}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{@app.route('/api/v1/UE/placement-\/status/<int:ueId>',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_a142f5335bdb63ebc9182ee001a3a6798}\index{routes@{routes}!upload\_ml\_model@{upload\_ml\_model}}
+\index{upload\_ml\_model@{upload\_ml\_model}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{upload\_ml\_model()}{upload\_ml\_model()}}
+{\footnotesize\ttfamily \label{namespaceroutes_a142f5335bdb63ebc9182ee001a3a6798} 
+routes.\+upload\+\_\+ml\+\_\+model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00249}{249}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00249\ \textcolor{keyword}{def\ }upload\_ml\_model():}
+\DoxyCodeLine{00250\ \ \ \ \ ml\_model\_store[\textcolor{stringliteral}{'model'}]\ =\ request.json}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}ML\ model\ upload\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{@app.route('/api/v1/ML/download',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_af008a443d653cde87491644567ad02d7}\index{routes@{routes}!upload\_odr\_dataset@{upload\_odr\_dataset}}
+\index{upload\_odr\_dataset@{upload\_odr\_dataset}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{upload\_odr\_dataset()}{upload\_odr\_dataset()}}
+{\footnotesize\ttfamily \label{namespaceroutes_af008a443d653cde87491644567ad02d7} 
+routes.\+upload\+\_\+odr\+\_\+dataset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00263}{263}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00263\ \textcolor{keyword}{def\ }upload\_odr\_dataset():}
+\DoxyCodeLine{00264\ \ \ \ \ odr\_dataset\_store[\textcolor{stringliteral}{'dataset'}]\ =\ request.json}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}ODR\ dataset\ upload\ successful"{}}\}),\ 201}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{comment}{\#\ Experiment\ Status\ Endpoint}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{@app.route('/api/v1/CBF/status',\ methods=['GET'])}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceroutes_aa9adbcf64894ce960168d66811896c6e}\index{routes@{routes}!visual\_model\_control\_start@{visual\_model\_control\_start}}
+\index{visual\_model\_control\_start@{visual\_model\_control\_start}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{visual\_model\_control\_start()}{visual\_model\_control\_start()}}
+{\footnotesize\ttfamily \label{namespaceroutes_aa9adbcf64894ce960168d66811896c6e} 
+routes.\+visual\+\_\+model\+\_\+control\+\_\+start (\begin{DoxyParamCaption}\item[{}]{command}{, }\item[{}]{model\+Id}{}\end{DoxyParamCaption})}
+
+
+
+CVCF sends a start/stop command to activate/deactivate support vision model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command to execute (start/stop). \\
+\hline
+{\em model\+Id} & The ID of the vision model. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSON response with the result of the command. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_c_v_f_2routes_8py_source_l00103}{103}} of file \mbox{\hyperlink{_c_v_f_2routes_8py_source}{routes.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \textcolor{keyword}{def\ }visual\_model\_control\_start(command,\ modelId):}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bad\_request(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{00106\ \ \ \ \ vm\_data\_store.setdefault(modelId,\ \{\})[\textcolor{stringliteral}{'vision\_model\_control'}]\ =\ command}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Vision\ Model\ control\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{00108\ }
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00044}{bad\+\_\+request()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceroutes_aa19e2022eb0077bf5893dce2630b95e0}\index{routes@{routes}!app@{app}}
+\index{app@{app}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily \label{namespaceroutes_aa19e2022eb0077bf5893dce2630b95e0} 
+routes.\+app = Flask(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00004}{4}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a3bff88aea63ed017ffcb3d6ce821479e}\index{routes@{routes}!CgNBCF\_API\_BASE\_URL@{CgNBCF\_API\_BASE\_URL}}
+\index{CgNBCF\_API\_BASE\_URL@{CgNBCF\_API\_BASE\_URL}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{CgNBCF\_API\_BASE\_URL}{CgNBCF\_API\_BASE\_URL}}
+{\footnotesize\ttfamily \label{namespaceroutes_a3bff88aea63ed017ffcb3d6ce821479e} 
+str routes.\+Cg\+NBCF\+\_\+\+API\+\_\+\+BASE\+\_\+\+URL = "{}http\+://localhost\+:5003"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00027}{27}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a5e9ff14895bcc41c4b6c965f1f9c2968}\index{routes@{routes}!cgnbcf\_data\_store@{cgnbcf\_data\_store}}
+\index{cgnbcf\_data\_store@{cgnbcf\_data\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{cgnbcf\_data\_store}{cgnbcf\_data\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_a5e9ff14895bcc41c4b6c965f1f9c2968} 
+dict routes.\+cgnbcf\+\_\+data\+\_\+store}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ 1\ :\ \{}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'gnb\_control'}\ :\ \textcolor{stringliteral}{'stop'},}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'gnb\_configuration'}\ :\ \textcolor{stringliteral}{''},}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'gnb\_telemetry'}:\ \textcolor{stringliteral}{''},}
+\DoxyCodeLine{00006\ \ \ \ \ \}}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source_l00010}{10}} of file \mbox{\hyperlink{_cg_n_b_c_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a348d99faed1b3ae1448c6a629e66fdf0}\index{routes@{routes}!CLISCF\_API\_BASE\_URL@{CLISCF\_API\_BASE\_URL}}
+\index{CLISCF\_API\_BASE\_URL@{CLISCF\_API\_BASE\_URL}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{CLISCF\_API\_BASE\_URL}{CLISCF\_API\_BASE\_URL}}
+{\footnotesize\ttfamily \label{namespaceroutes_a348d99faed1b3ae1448c6a629e66fdf0} 
+str routes.\+CLISCF\+\_\+\+API\+\_\+\+BASE\+\_\+\+URL = "{}http\+://localhost\+:5001"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00025}{25}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_ac5d2cd04816941238c12518435d1cc7b}\index{routes@{routes}!cliscf\_data\_store@{cliscf\_data\_store}}
+\index{cliscf\_data\_store@{cliscf\_data\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{cliscf\_data\_store}{cliscf\_data\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_ac5d2cd04816941238c12518435d1cc7b} 
+dict routes.\+cliscf\+\_\+data\+\_\+store}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ 0:\ \{}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}:\ \textcolor{stringliteral}{'RUNNING'}}
+\DoxyCodeLine{00004\ \ \ \ \ \},}
+\DoxyCodeLine{00005\ \ \ \ \ 1:\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}:\ \textcolor{stringliteral}{'READY'}}
+\DoxyCodeLine{00007\ \ \ \ \ \},}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source_l00010}{10}} of file \mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a19d91047f44c1c6f7a6a67d057b80981}\index{routes@{routes}!CTCF\_API\_BASE\_URL@{CTCF\_API\_BASE\_URL}}
+\index{CTCF\_API\_BASE\_URL@{CTCF\_API\_BASE\_URL}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{CTCF\_API\_BASE\_URL}{CTCF\_API\_BASE\_URL}}
+{\footnotesize\ttfamily \label{namespaceroutes_a19d91047f44c1c6f7a6a67d057b80981} 
+str routes.\+CTCF\+\_\+\+API\+\_\+\+BASE\+\_\+\+URL = "{}http\+://localhost\+:5002"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00026}{26}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a66e5bb820e3ad200c4fd838c546bd357}\index{routes@{routes}!ctcf\_data\_store@{ctcf\_data\_store}}
+\index{ctcf\_data\_store@{ctcf\_data\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{ctcf\_data\_store}{ctcf\_data\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_a66e5bb820e3ad200c4fd838c546bd357} 
+dict routes.\+ctcf\+\_\+data\+\_\+store = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00019}{19}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_ae873f30fd49cbfacfd4cfcc5908b85eb}\index{routes@{routes}!debug@{debug}}
+\index{debug@{debug}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily \label{namespaceroutes_ae873f30fd49cbfacfd4cfcc5908b85eb} 
+routes.\+debug}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00273}{273}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a9fa895c2eb37c54360dce0df00014b4c}\index{routes@{routes}!experiment\_status\_store@{experiment\_status\_store}}
+\index{experiment\_status\_store@{experiment\_status\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{experiment\_status\_store}{experiment\_status\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_a9fa895c2eb37c54360dce0df00014b4c} 
+dict routes.\+experiment\+\_\+status\+\_\+store = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00023}{23}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_aeb7e4182a49a873c38267cce833fc5c6}\index{routes@{routes}!gnb\_data\_store@{gnb\_data\_store}}
+\index{gnb\_data\_store@{gnb\_data\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{gnb\_data\_store}{gnb\_data\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_aeb7e4182a49a873c38267cce833fc5c6} 
+dict routes.\+gnb\+\_\+data\+\_\+store}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ 0\ :\ \{}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}\ :\ \textcolor{stringliteral}{'OK'}}
+\DoxyCodeLine{00004\ \ \ \ \ \},}
+\DoxyCodeLine{00005\ \ \ \ \ 1\ :\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}\ :\ \textcolor{stringliteral}{'FAILED'}}
+\DoxyCodeLine{00007\ \ \ \ \ \}}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00007}{7}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a6290743aed09ae309cb9c1c0afc32b8e}\index{routes@{routes}!ml\_model\_store@{ml\_model\_store}}
+\index{ml\_model\_store@{ml\_model\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{ml\_model\_store}{ml\_model\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_a6290743aed09ae309cb9c1c0afc32b8e} 
+dict routes.\+ml\+\_\+model\+\_\+store = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00021}{21}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_a23c745955447c4a37a63da751ad763a1}\index{routes@{routes}!odr\_dataset\_store@{odr\_dataset\_store}}
+\index{odr\_dataset\_store@{odr\_dataset\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{odr\_dataset\_store}{odr\_dataset\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_a23c745955447c4a37a63da751ad763a1} 
+dict routes.\+odr\+\_\+dataset\+\_\+store = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00022}{22}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_ade14e5c80f087fea9308bbe4a7a08d41}\index{routes@{routes}!simulator\_data\_store@{simulator\_data\_store}}
+\index{simulator\_data\_store@{simulator\_data\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{simulator\_data\_store}{simulator\_data\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_ade14e5c80f087fea9308bbe4a7a08d41} 
+dict routes.\+simulator\+\_\+data\+\_\+store = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00020}{20}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+
+\Hypertarget{namespaceroutes_ada96cece39440b40cc3968fb9b591495}\index{routes@{routes}!ue\_data\_store@{ue\_data\_store}}
+\index{ue\_data\_store@{ue\_data\_store}!routes@{routes}}
+\doxysubsubsection{\texorpdfstring{ue\_data\_store}{ue\_data\_store}}
+{\footnotesize\ttfamily \label{namespaceroutes_ada96cece39440b40cc3968fb9b591495} 
+dict routes.\+ue\+\_\+data\+\_\+store}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_c_b_f_2routes_8py_source_l00016}{16}} of file \mbox{\hyperlink{_c_b_f_2routes_8py_source}{routes.\+py}}.
+

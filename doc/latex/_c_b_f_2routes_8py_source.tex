@@ -1,0 +1,279 @@
+\doxysection{routes.\+py}
+\hypertarget{_c_b_f_2routes_8py_source}{}\label{_c_b_f_2routes_8py_source}\index{CBF/routes.py@{CBF/routes.py}}
+\mbox{\hyperlink{_c_b_f_2routes_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00001}\mbox{\hyperlink{namespaceroutes}{00001}}\ \textcolor{keyword}{from}\ flask\ \textcolor{keyword}{import}\ Flask,\ request,\ jsonify}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00002}00002\ \textcolor{keyword}{import}\ requests}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00004}\mbox{\hyperlink{namespaceroutes_aa19e2022eb0077bf5893dce2630b95e0}{00004}}\ app\ =\ Flask(\_\_name\_\_)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00006}00006\ \textcolor{comment}{\#\ Example\ data\ stores}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00007}\mbox{\hyperlink{namespaceroutes_aeb7e4182a49a873c38267cce833fc5c6}{00007}}\ gnb\_data\_store\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00008}00008\ \ \ \ \ 0\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}\ :\ \textcolor{stringliteral}{'OK'}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00010}00010\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00011}00011\ \ \ \ \ 1\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}\ :\ \textcolor{stringliteral}{'FAILED'}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00016}\mbox{\hyperlink{namespaceroutes_ada96cece39440b40cc3968fb9b591495}{00016}}\ ue\_data\_store\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00019}\mbox{\hyperlink{namespaceroutes_a66e5bb820e3ad200c4fd838c546bd357}{00019}}\ ctcf\_data\_store\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00020}\mbox{\hyperlink{namespaceroutes_ade14e5c80f087fea9308bbe4a7a08d41}{00020}}\ simulator\_data\_store\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00021}\mbox{\hyperlink{namespaceroutes_a6290743aed09ae309cb9c1c0afc32b8e}{00021}}\ ml\_model\_store\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00022}\mbox{\hyperlink{namespaceroutes_a23c745955447c4a37a63da751ad763a1}{00022}}\ odr\_dataset\_store\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00023}\mbox{\hyperlink{namespaceroutes_a9fa895c2eb37c54360dce0df00014b4c}{00023}}\ experiment\_status\_store\ =\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00025}\mbox{\hyperlink{namespaceroutes_a348d99faed1b3ae1448c6a629e66fdf0}{00025}}\ CLISCF\_API\_BASE\_URL\ =\ \textcolor{stringliteral}{"{}http://localhost:5001"{}}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00026}\mbox{\hyperlink{namespaceroutes_a19d91047f44c1c6f7a6a67d057b80981}{00026}}\ CTCF\_API\_BASE\_URL\ =\ \textcolor{stringliteral}{"{}http://localhost:5002"{}}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00027}\mbox{\hyperlink{namespaceroutes_a3bff88aea63ed017ffcb3d6ce821479e}{00027}}\ CgNBCF\_API\_BASE\_URL\ =\ \textcolor{stringliteral}{"{}http://localhost:5003"{}}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00029}00029\ \textcolor{comment}{\#\ Error\ handling}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00030}00030\ \textcolor{preprocessor}{@app.errorhandler(404)}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00031}\mbox{\hyperlink{namespaceroutes_aee4a97c099b5f41402c9bc3cba9044e1}{00031}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_aee4a97c099b5f41402c9bc3cba9044e1}{not\_found}}(error):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00032}00032\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Resource\ Not\ Found"{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 404,}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}The\ resource\ you\ requested\ was\ not\ found."{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 404}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00043}00043\ \textcolor{preprocessor}{@app.errorhandler(400)}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00044}\mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{00044}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(error):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00045}00045\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Bad\ Request"{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 400,}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}The\ request\ could\ not\ be\ understood\ or\ was\ missing\ required\ parameters."{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 400}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00056}00056\ \textcolor{preprocessor}{@app.errorhandler(500)}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00057}\mbox{\hyperlink{namespaceroutes_a3835b86d14fc4e361f491cdd5162117f}{00057}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a3835b86d14fc4e361f491cdd5162117f}{internal\_error}}(error):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00058}00058\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Internal\ Server\ Error"{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 500,}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}An\ unexpected\ error\ occurred\ on\ the\ server."{}},}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 500}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00069}\mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{00069}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(baseUrl,endpoint,\ method,\ data=None):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00070}00070\ \ \ \ \ url\ =\ f\textcolor{stringliteral}{"{}\{baseUrl\}\{endpoint\}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ method\ ==\ \textcolor{stringliteral}{'GET'}:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.get(url)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ method\ ==\ \textcolor{stringliteral}{'POST'}:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.post(url,\ json=data)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ method\ ==\ \textcolor{stringliteral}{'PUT'}:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.put(url,\ json=data)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ method\ ==\ \textcolor{stringliteral}{'DELETE'}:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ requests.delete(url)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}error"{}}:\ \textcolor{stringliteral}{"{}Unsupported\ method"{}}\}),\ 405}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ response.raise\_for\_status()\ \ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(response.json()),\ response.status\_code}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{except}\ requests.exceptions.RequestException\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}error"{}}:\ str(e)\}),\ 500}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00089}00089\ \textcolor{comment}{\#\ gNB\ Endpoints}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00090}00090\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/placement-\/status/<int:gnbId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00091}\mbox{\hyperlink{namespaceroutes_af49e4106cb25dedf3d62777e692e7a07}{00091}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_af49e4106cb25dedf3d62777e692e7a07}{get\_gnb\_placement\_status}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CgNBCF\_API\_BASE\_URL,\textcolor{stringliteral}{'/configuration/\{gnbId\}'},\ \textcolor{stringliteral}{'GET'},)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00094}00094\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/placement-\/setup/<int:gnbId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00095}\mbox{\hyperlink{namespaceroutes_a18ad2f57b5dd4beec9c1d8365fbd7293}{00095}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a18ad2f57b5dd4beec9c1d8365fbd7293}{setup\_gnb\_placement}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CgNBCF\_API\_BASE\_URL,\textcolor{stringliteral}{'/configuration/\{gnbId\}'},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00098}00098\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiocommunications-\/status/<int:gnbId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00099}\mbox{\hyperlink{namespaceroutes_a912233f796092993e1b37220a574b1bb}{00099}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a912233f796092993e1b37220a574b1bb}{get\_gnb\_radio\_communications\_status}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'radio\_communications\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00102}00102\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiocommunications-\/setup/<int:gnbId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00103}\mbox{\hyperlink{namespaceroutes_a4bb1c2c35f3d6dbf8337c281b6e1cb5e}{00103}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a4bb1c2c35f3d6dbf8337c281b6e1cb5e}{setup\_gnb\_radio\_communications}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00104}00104\ \ \ \ \ gnb\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'radio\_communications\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ radio\ communications\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00107}00107\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiosensing-\/status/<int:gnbId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00108}\mbox{\hyperlink{namespaceroutes_a56449f20355eea281af1bd96f87bc7be}{00108}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a56449f20355eea281af1bd96f87bc7be}{get\_gnb\_radio\_sensing\_status}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'radio\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00111}00111\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/radiosensing-\/setup/<int:gnbId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00112}\mbox{\hyperlink{namespaceroutes_a17d2ad472d06b0ebc70c61da7cd53d9b}{00112}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a17d2ad472d06b0ebc70c61da7cd53d9b}{setup\_gnb\_radio\_sensing}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00113}00113\ \ \ \ \ gnb\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ radio\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00116}00116\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/videosensing-\/status/<int:gnbId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00117}\mbox{\hyperlink{namespaceroutes_aaed703fef3538e3710445470e5c70a4a}{00117}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_aaed703fef3538e3710445470e5c70a4a}{get\_gnb\_video\_sensing\_status}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(gnbId,\ \{\}).get(\textcolor{stringliteral}{'video\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00120}00120\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/videosensing-\/setup/<int:gnbId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00121}\mbox{\hyperlink{namespaceroutes_a64b7dca1cb64c2fdd3aef5aa0afadb90}{00121}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a64b7dca1cb64c2fdd3aef5aa0afadb90}{setup\_gnb\_video\_sensing}}(gnbId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00122}00122\ \ \ \ \ gnb\_data\_store.setdefault(gnbId,\ \{\})[\textcolor{stringliteral}{'video\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ video\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00125}00125\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/xapp-\/status/<int:id>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00126}\mbox{\hyperlink{namespaceroutes_aca2d3a8c9593ce33e40d9fd061611ca2}{00126}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_aca2d3a8c9593ce33e40d9fd061611ca2}{get\_gnb\_xapp\_status}}(id):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(gnb\_data\_store.get(id,\ \{\}).get(\textcolor{stringliteral}{'xapp\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00129}00129\ \textcolor{preprocessor}{@app.route('/api/v1/gNB/xapp-\/setup/<int:id>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00130}\mbox{\hyperlink{namespaceroutes_ae7be8be87ffe1dd86b9224825ae63c80}{00130}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ae7be8be87ffe1dd86b9224825ae63c80}{upload\_gnb\_xapp}}(id):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00131}00131\ \ \ \ \ gnb\_data\_store.setdefault(id,\ \{\})[\textcolor{stringliteral}{'xapp\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}gNB\ x-\/APP\ upload\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00134}00134\ \textcolor{comment}{\#\ UE\ Endpoints}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00135}00135\ \textcolor{preprocessor}{@app.route('/api/v1/UE/placement-\/status/<int:ueId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00136}\mbox{\hyperlink{namespaceroutes_a16abe2cf56da9883f27c40680ec2f200}{00136}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a16abe2cf56da9883f27c40680ec2f200}{get\_ue\_placement\_status}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'placement\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00139}00139\ \textcolor{preprocessor}{@app.route('/api/v1/UE/placement-\/setup/<int:ueId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00140}\mbox{\hyperlink{namespaceroutes_adbc1e681ba51410bcaa7b6daa132ae6b}{00140}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_adbc1e681ba51410bcaa7b6daa132ae6b}{setup\_ue\_placement}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00141}00141\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'placement\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ placement\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00144}00144\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiocommunications-\/status/<int:ueId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00145}\mbox{\hyperlink{namespaceroutes_a77fafc3be371431fdd3ea43fce38bd69}{00145}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a77fafc3be371431fdd3ea43fce38bd69}{get\_ue\_radio\_communications\_status}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'radio\_communications\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00148}00148\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiocommunications-\/setup/<int:ueId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00149}\mbox{\hyperlink{namespaceroutes_adf51db9b7c3a24d5a716976a99fdaa33}{00149}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_adf51db9b7c3a24d5a716976a99fdaa33}{setup\_ue\_radio\_communications}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00150}00150\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'radio\_communications\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ radio\ communications\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00153}00153\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiosensing-\/status/<int:ueId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00154}\mbox{\hyperlink{namespaceroutes_ac30617705b6f90a90629ef686b7e29b9}{00154}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ac30617705b6f90a90629ef686b7e29b9}{get\_ue\_radio\_sensing\_status}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'radio\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00157}00157\ \textcolor{preprocessor}{@app.route('/api/v1/UE/radiosensing-\/setup/<int:ueId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00158}\mbox{\hyperlink{namespaceroutes_a545a8507a4ea61fb629f41cd9bca63bb}{00158}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a545a8507a4ea61fb629f41cd9bca63bb}{setup\_ue\_radio\_sensing}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00159}00159\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ radio\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00162}00162\ \textcolor{preprocessor}{@app.route('/api/v1/UE/videosensing-\/status/<int:ueId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00163}\mbox{\hyperlink{namespaceroutes_a22b1361e16de5ee209338740d36b20a6}{00163}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a22b1361e16de5ee209338740d36b20a6}{get\_ue\_video\_sensing\_status}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ue\_data\_store.get(ueId,\ \{\}).get(\textcolor{stringliteral}{'video\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00166}00166\ \textcolor{preprocessor}{@app.route('/api/v1/UE/videosensing-\/setup/<int:ueId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00167}\mbox{\hyperlink{namespaceroutes_ad1c55935fb8c0b32a9f4f02bb2d6efe2}{00167}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ad1c55935fb8c0b32a9f4f02bb2d6efe2}{setup\_ue\_video\_sensing}}(ueId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00168}00168\ \ \ \ \ ue\_data\_store.setdefault(ueId,\ \{\})[\textcolor{stringliteral}{'video\_sensing\_status'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}UE\ video\ sensing\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00171}00171\ \textcolor{comment}{\#\ LIS\ Endpoints}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00172}00172\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/placement-\/status/<int:lisId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00173}\mbox{\hyperlink{namespaceroutes_a6e263f7253ee73661633e9c7be9c5118}{00173}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a6e263f7253ee73661633e9c7be9c5118}{get\_lis\_placement\_status}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/placement/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00176}00176\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/placement-\/setup/<int:lisId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00177}\mbox{\hyperlink{namespaceroutes_ad299ca060a291e7f925088f2bd615d45}{00177}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ad299ca060a291e7f925088f2bd615d45}{setup\_lis\_placement}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/placement/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00180}00180\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiocommunications-\/status/<int:lisId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00181}\mbox{\hyperlink{namespaceroutes_a5825ec0d3589431b5c4bfafce02992df}{00181}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a5825ec0d3589431b5c4bfafce02992df}{get\_lis\_radio\_communications\_status}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/comms/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00184}00184\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiocommunications-\/setup/<int:lisId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00185}\mbox{\hyperlink{namespaceroutes_ab06c2dcdaad7ef2385c587a0beff5730}{00185}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ab06c2dcdaad7ef2385c587a0beff5730}{setup\_lis\_radio\_communications}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/comms/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00188}00188\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiosensing-\/status/<int:lisId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00189}\mbox{\hyperlink{namespaceroutes_ad9e5c87f5482841865a6a7861d8ba706}{00189}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ad9e5c87f5482841865a6a7861d8ba706}{get\_lis\_radio\_sensing\_status}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00190}00190\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/sensing/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00192}00192\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/radiosensing-\/setup/<int:lisId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00193}\mbox{\hyperlink{namespaceroutes_a68ef295de05d13b18702f4d68f901a1b}{00193}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a68ef295de05d13b18702f4d68f901a1b}{setup\_lis\_radio\_sensing}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00194}00194\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/radio-\/sensing/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00196}00196\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/videosensing-\/status/<int:lisId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00197}\mbox{\hyperlink{namespaceroutes_af0ae0a15e3a03ee4c724272859697c63}{00197}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_af0ae0a15e3a03ee4c724272859697c63}{get\_lis\_video\_sensing\_status}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00198}00198\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,\ f\textcolor{stringliteral}{"{}/configuration/video-\/sensing/\{lisId\}/status"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00200}00200\ \textcolor{preprocessor}{@app.route('/api/v1/LIS/videosensing-\/setup/<int:lisId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00201}\mbox{\hyperlink{namespaceroutes_a951108890d5ce6747d395a22a86e88b7}{00201}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a951108890d5ce6747d395a22a86e88b7}{setup\_lis\_video\_sensing}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00202}00202\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CLISCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/video-\/sensing/\{lisId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00204}00204\ \textcolor{comment}{\#\ CTCF\ Endpoints}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00206}00206\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/status/<int:ctcfId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00207}\mbox{\hyperlink{namespaceroutes_a2bab26910cbb03d211f6b0a29731bb31}{00207}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a2bab26910cbb03d211f6b0a29731bb31}{get\_ctcf\_status}}(ctcfId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/placement/\{ctcfId\}/status"{}},\textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00210}00210\ \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00211}00211\ \textcolor{stringliteral}{@app.route('/api/v1/CTCF/setup/<int:ctcfId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00212}00212\ \textcolor{stringliteral}{def\ setup\_ctcf(ctcfId):}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00213}00213\ \textcolor{stringliteral}{\ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})['status']\ =\ request.json}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00214}00214\ \textcolor{stringliteral}{\ \ \ \ return\ jsonify(\{"{}result"{}:\ "{}CTCF\ setup\ successful"{}\}),\ 201}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00215}00215\ \textcolor{stringliteral}{'''}\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00217}00217\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/control/<string:command>/<int:ctcfId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00218}\mbox{\hyperlink{namespaceroutes_a83f61021dc0e0db323e6d2c67b17b76a}{00218}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a83f61021dc0e0db323e6d2c67b17b76a}{control\_ctcf}}(command,\ ctcfId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(400)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00221}00221\ \ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})[\textcolor{stringliteral}{'control'}]\ =\ command}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/control/\{command\}/\{ctcfId\}"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00224}00224\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/configuration/<int:ctcfId>/rules',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00225}\mbox{\hyperlink{namespaceroutes_a6cc67b927fa1fa0fdfad218acab99211}{00225}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a6cc67b927fa1fa0fdfad218acab99211}{get\_ctcf\_rules}}(ctcfId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00226}00226\ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/\{ctcfId\}/rules"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00228}00228\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/configuration/<int:ctcfId>/rules',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00229}\mbox{\hyperlink{namespaceroutes_a96394345325bc7219d2344675c00fef2}{00229}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a96394345325bc7219d2344675c00fef2}{setup\_ctcf\_rules}}(ctcfId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00230}00230\ \ \ \ \ ctcf\_data\_store.setdefault(ctcfId,\ \{\})[\textcolor{stringliteral}{'rules'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00231}00231\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/configuration/\{ctcfId\}/rules"{}},\ \textcolor{stringliteral}{'POST'},\ request.json)}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00233}00233\ \textcolor{preprocessor}{@app.route('/api/v1/CTCF/telemetry/<int:ctcfId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00234}\mbox{\hyperlink{namespaceroutes_ac0cf40b9056b2f2760359dcfa97053da}{00234}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ac0cf40b9056b2f2760359dcfa97053da}{get\_ctcf\_telemetry}}(ctcfId):}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_a2685ce7388178cb3759df63ed003531a}{forward}}(CTCF\_API\_BASE\_URL,f\textcolor{stringliteral}{"{}/telemetry/\{ctcfId\}"{}},\ \textcolor{stringliteral}{'GET'})}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00238}00238\ \textcolor{comment}{\#\ NET-\/S\ Endpoints}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00239}00239\ \textcolor{preprocessor}{@app.route('/api/v1/NETS/status',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00240}\mbox{\hyperlink{namespaceroutes_afee1eb907f39641dd9a672e2596e0d72}{00240}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_afee1eb907f39641dd9a672e2596e0d72}{get\_nets\_status}}():}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00241}00241\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}status"{}}:\ \textcolor{stringliteral}{"{}NET-\/S\ operational"{}}\}),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00243}00243\ \textcolor{preprocessor}{@app.route('/api/v1/NETS/setup',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00244}\mbox{\hyperlink{namespaceroutes_a1aef58af69c7376232bd85902bb358cb}{00244}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a1aef58af69c7376232bd85902bb358cb}{setup\_nets}}():}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00245}00245\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}NET-\/S\ setup\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00247}00247\ \textcolor{comment}{\#\ ML\ Model\ Endpoints}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00248}00248\ \textcolor{preprocessor}{@app.route('/api/v1/ML/upload',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00249}\mbox{\hyperlink{namespaceroutes_a142f5335bdb63ebc9182ee001a3a6798}{00249}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a142f5335bdb63ebc9182ee001a3a6798}{upload\_ml\_model}}():}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00250}00250\ \ \ \ \ ml\_model\_store[\textcolor{stringliteral}{'model'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00251}00251\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}ML\ model\ upload\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00253}00253\ \textcolor{preprocessor}{@app.route('/api/v1/ML/download',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00254}\mbox{\hyperlink{namespaceroutes_a45837ce7645dee8d58b5cb5ab9d6c1e6}{00254}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a45837ce7645dee8d58b5cb5ab9d6c1e6}{download\_ml\_model}}():}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(ml\_model\_store.get(\textcolor{stringliteral}{'model'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00257}00257\ \textcolor{comment}{\#\ ODR\ Dataset\ Endpoints}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00258}00258\ \textcolor{preprocessor}{@app.route('/api/v1/ODR/downlink',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00259}\mbox{\hyperlink{namespaceroutes_a8880f531703ce930a38645ff1eb8a517}{00259}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a8880f531703ce930a38645ff1eb8a517}{download\_odr\_dataset}}():}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00260}00260\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(odr\_dataset\_store.get(\textcolor{stringliteral}{'dataset'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00262}00262\ \textcolor{preprocessor}{@app.route('/api/v1/ODR/upload',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00263}\mbox{\hyperlink{namespaceroutes_af008a443d653cde87491644567ad02d7}{00263}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_af008a443d653cde87491644567ad02d7}{upload\_odr\_dataset}}():}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00264}00264\ \ \ \ \ odr\_dataset\_store[\textcolor{stringliteral}{'dataset'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00265}00265\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}ODR\ dataset\ upload\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00267}00267\ \textcolor{comment}{\#\ Experiment\ Status\ Endpoint}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00268}00268\ \textcolor{preprocessor}{@app.route('/api/v1/CBF/status',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00269}\mbox{\hyperlink{namespaceroutes_a692f82cc48d5024a765e622748734716}{00269}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a692f82cc48d5024a765e622748734716}{get\_experiment\_status}}():}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00270}00270\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(experiment\_status\_store.get(\textcolor{stringliteral}{'status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00272}00272\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{_c_b_f_2routes_8py_source_l00273}\mbox{\hyperlink{namespaceroutes_ae873f30fd49cbfacfd4cfcc5908b85eb}{00273}}\ \ \ \ \ app.run(debug=\textcolor{keyword}{True})}
+
+\end{DoxyCode}

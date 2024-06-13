@@ -1,0 +1,24 @@
+\doxysection{models.\+py}
+\hypertarget{_c_l_i_s_c_f_2models_8py_source}{}\label{_c_l_i_s_c_f_2models_8py_source}\index{CLISCF/models.py@{CLISCF/models.py}}
+\mbox{\hyperlink{_c_l_i_s_c_f_2models_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00001}00001\ \textcolor{keyword}{from}\ dataclasses\ \textcolor{keyword}{import}\ dataclass}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00002}00002\ \textcolor{keyword}{from}\ typing\ \textcolor{keyword}{import}\ List}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00004}00004\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00005}\mbox{\hyperlink{classmodels_1_1_radio_sensing_configuration}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_radio_sensing_configuration}{RadioSensingConfiguration}}:}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00006}00006\ \ \ \ \ time\_step:\ float}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00007}\mbox{\hyperlink{classmodels_1_1_radio_sensing_configuration_acfef6d47dfda73b5d704541158d8c560}{00007}}\ \ \ \ \ sensing\_custom\_phase\_profile:\ List[float]}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00009}00009\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00010}\mbox{\hyperlink{classmodels_1_1_pre_configured_beam}{00010}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_pre_configured_beam}{PreConfiguredBeam}}:}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00011}\mbox{\hyperlink{classmodels_1_1_pre_configured_beam_a8d67ac7c0612559185afad68a6d2b66d}{00011}}\ \ \ \ \ source\_angle:\ List[float]}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00012}\mbox{\hyperlink{classmodels_1_1_pre_configured_beam_ac6ed8c4cb2285d61f145a559f6763f3a}{00012}}\ \ \ \ \ destination\_angle:\ List[float]}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00013}00013\ \ \ \ \ beam\_width:\ int}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00015}00015\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00016}\mbox{\hyperlink{classmodels_1_1_radio_communications_configuration}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_radio_communications_configuration}{RadioCommunicationsConfiguration}}:}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00017}00017\ \ \ \ \ pre\_configured\_beam:\ PreConfiguredBeam}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2models_8py_source_l00018}\mbox{\hyperlink{classmodels_1_1_radio_communications_configuration_a9e8b72a73a7081b40e89e56643336ce1}{00018}}\ \ \ \ \ custom\_phase\_profile:\ List[float]}
+
+\end{DoxyCode}

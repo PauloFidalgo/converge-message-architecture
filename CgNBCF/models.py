@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 
 @dataclass
-class gnbRadioSensing:
+class GnbRadioSensing:
     periodicity: int
     iq_samples: float
 
 @dataclass
-class gnbPlacement:
+class GnbPlacement:
     x: int
     y: int
     z: int
@@ -21,40 +21,37 @@ class F1:
 @dataclass
 class BandConfiguration:
     band: int
-    ssbArfcn: int
-    pointAArfcn: int
-
+    ssb_arfcn: int
+    point_a_arfcn: int
 
 @dataclass
 class RU:
-    bandConfiguration: BandConfiguration
-    bandwidthMHz: int
-    tddConfiguration: str
-    logicalAntRx: int
-    logicalAntTx: int
+    band_configuration: BandConfiguration
+    bandwidth_mhz: int
+    tdd_configuration: str
+    logical_ant_rx: int
+    logical_ant_tx: int
 
 @dataclass
-class O_RU:
-    7_2: 7_2
-    RU: RU
+class ORU:
+    seven_two: 'SevenTwo'
+    ru: RU
 
 @dataclass
-class O_DU:
-    F1: F1
-    7_2: 7_2
-    RU: RU
+class ODU:
+    f1: F1
+    seven_two: 'SevenTwo'
+    ru: RU
 
 @dataclass
-class O_CU:
-    CN: CN
-    F1: F1
+class OCU:
+    cn: 'CN'
+    f1: F1
 
 @dataclass
-class gnbConfiguration:
-    O_CU: O_CU
-    O_DU: O_DU
-    O_RU: O_RU
-    CgNB_placement: gnbPlacement
-    CgNB_radio_sensing: gnbRadioSensing
-
-
+class GnbConfiguration:
+    o_cu: OCU
+    o_du: ODU
+    o_ru: ORU
+    cg_nb_placement: GnbPlacement
+    cg_nb_radio_sensing: GnbRadioSensing

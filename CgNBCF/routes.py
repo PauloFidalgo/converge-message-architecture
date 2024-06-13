@@ -1,6 +1,6 @@
-## @package CgNB_API
-# Documentation for CgNB API
-# This file contains the services made available by CgNB
+## @package CgNBCF_API
+# Documentation for CgNBCF API
+# This file contains the services made available by CgNBCF
 
 from flask import Flask, request, jsonify
 
@@ -18,6 +18,11 @@ cgnbcf_data_store = {
 # Error handling
 @app.errorhandler(404)
 def not_found(error):
+    """
+    @brief Handles 404 errors.
+    @param error The error object.
+    @return JSON response with error details.
+    """
     problem = {
         'error' : {
             'type' : "",
@@ -31,6 +36,11 @@ def not_found(error):
 
 @app.errorhandler(400)
 def bad_request(error):
+    """
+    @brief Handles 400 errors.
+    @param error The error object.
+    @return JSON response with error details.
+    """
     problem = {
         'error' : {
             'type' : "",
@@ -44,6 +54,11 @@ def bad_request(error):
 
 @app.errorhandler(500)
 def internal_error(error):
+    """
+    @brief Handles 500 errors.
+    @param error The error object.
+    @return JSON response with error details.
+    """
     problem = {
         'error' : {
             'type' : "",
@@ -60,6 +75,12 @@ def internal_error(error):
 # CgNB sends Start/Stop command to NT-RIC, O-CU, O-DU and O-RU
 @app.route('/control/<int:gnbId>/<string:command>', methods=['POST'])
 def gnb_control_start(command, gnbId):
+    """
+    @brief Sends start/stop command to NT-RIC, O-CU, O-DU, and O-RU.
+    @param command The command to execute (start/stop).
+    @param gnbId The ID of the gNB.
+    @return JSON response with the result of the command.
+    """
     if command not in ['start', 'stop']:
         return bad_request("Invalid command")
     cgnbcf_data_store.setdefault(gnbId, {})['gnb_control'] = command
@@ -69,22 +90,36 @@ def gnb_control_start(command, gnbId):
 # Get the current CgNB configuration
 @app.route('/configuration/<int:gnbId>', methods=['GET'])
 def get_gnb_configuration(gnbId):
+    """
+    @brief Gets the current CgNB configuration.
+    @param gnbId The ID of the gNB.
+    @return JSON response with the current configuration.
+    """
     return jsonify(cgnbcf_data_store.get(gnbId, {}).get('gnb_configuration', {})), 200
 
 ## CgNB Status
 # Get the current CgNB status
 @app.route('/configuration/<int:gnbId>/status', methods=['GET'])
-def get_gnb_configuration(gnbId):
+def get_gnb_status(gnbId):
+    """
+    @brief Gets the current CgNB status.
+    @param gnbId The ID of the gNB.
+    @return JSON response with the current status.
+    """
     return jsonify(cgnbcf_data_store.get(gnbId, {}).get('gnb_status', {})), 200
 
 ## CgNB Reconfiguration
 # CgNB creates and sends a reconfiguration command via CgNB interface to O-CU, O-DU, O-RU and NT-RIC
 @app.route('/configuration/<int:gnbId>', methods=['POST'])
 def configure_radio_comms(gnbId):
+    """
+    @brief Creates and sends a reconfiguration command via CgNB interface to O-CU, O-DU, O-RU, and NT-RIC.
+    @param gnbId The ID of the gNB.
+    @return JSON response with the result of the reconfiguration.
+    """
     cgnbcf_data_store.setdefault(gnbId, {})['gnb_configuration'] = request.json
     return jsonify({"result": "gNB reconfiguration successful"}), 201
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-

@@ -2,7 +2,6 @@
 # Documentation for UE API
 # This file contains the services made available by CUE
 
-
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -10,6 +9,11 @@ app = Flask(__name__)
 # Error handling
 @app.errorhandler(404)
 def not_found(error):
+    """
+    @brief Handles 404 errors.
+    @param error The error object.
+    @return JSON response with error details.
+    """
     problem = {
         'error' : {
             'type' : "",
@@ -23,6 +27,11 @@ def not_found(error):
 
 @app.errorhandler(400)
 def bad_request(error):
+    """
+    @brief Handles 400 errors.
+    @param error The error object.
+    @return JSON response with error details.
+    """
     problem = {
         'error' : {
             'type' : "",
@@ -36,6 +45,11 @@ def bad_request(error):
 
 @app.errorhandler(500)
 def internal_error(error):
+    """
+    @brief Handles 500 errors.
+    @param error The error object.
+    @return JSON response with error details.
+    """
     problem = {
         'error' : {
             'type' : "",
@@ -47,8 +61,10 @@ def internal_error(error):
     }
     return jsonify(problem), 500
 
-## CUE Start/Stop
-# CUECF sends Start/Stop command via CUE interface to the relevant UE
+## @brief CUECF sends Start/Stop command via CUE interface to the relevant UE
+#  @param command The command to execute (start/stop).
+#  @param ueId The ID of the UE.
+#  @return JSON response with the result of the command.
 @app.route('/control/<int:ueId>/<string:command>', methods=['POST'])
 def ue_control_start(command, ueId):
     if command not in ['start', 'stop']:
@@ -56,26 +72,27 @@ def ue_control_start(command, ueId):
     cuecf_data_store.setdefault(ueId, {})['ue_control'] = command
     return jsonify({"result": f"UE control {command} command executed successfully"}), 201
 
-## CUE Configuration
-# Get the current CUE configuration
+## @brief Get the current CUE configuration
+#  @param ueId The ID of the UE.
+#  @return JSON response with the current configuration.
 @app.route('/configuration/<int:ueId>', methods=['GET'])
 def get_ue_configuration(ueId):
     return jsonify(cuecf_data_store.get(ueId, {}).get('ue_configuration', {})), 200
 
-## CUE Status
-# Get the current CUE status
+## @brief Get the current CUE status
+#  @param ueId The ID of the UE.
+#  @return JSON response with the current status.
 @app.route('/configuration/<int:ueId>/status', methods=['GET'])
-def get_ue_configuration(ueId):
+def get_ue_status(ueId):
     return jsonify(cuecf_data_store.get(ueId, {}).get('ue_status', {})), 200
 
-## UE Reconfiguration
-# The CUECF creates and sends a reconfiguration command via CUE interface to the relevant UE
+## @brief The CUECF creates and sends a reconfiguration command via CUE interface to the relevant UE
+#  @param ueId The ID of the UE.
+#  @return JSON response with the result of the reconfiguration.
 @app.route('/configuration/<int:ueId>', methods=['POST'])
 def configure_radio_comms(ueId):
     cuecf_data_store.setdefault(ueId, {})['ue_configuration'] = request.json
     return jsonify({"result": "UE reconfiguration successful"}), 201
 
-
 if __name__ == '__main__':
     app.run(debug=True)
-

@@ -1,0 +1,203 @@
+\doxysection{routes.\+py}
+\hypertarget{_c_l_i_s_c_f_2routes_8py_source}{}\label{_c_l_i_s_c_f_2routes_8py_source}\index{CLISCF/routes.py@{CLISCF/routes.py}}
+\mbox{\hyperlink{_c_l_i_s_c_f_2routes_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00001}\mbox{\hyperlink{namespace_c_l_i_s___a_p_i}{00001}}\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00005}00005\ \textcolor{keyword}{from}\ flask\ \textcolor{keyword}{import}\ Flask,\ request,\ jsonify}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00007}00007\ app\ =\ Flask(\_\_name\_\_)}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00009}00009\ \textcolor{comment}{\#\ Example\ data\ store\ for\ CLISCF}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00010}\mbox{\hyperlink{namespaceroutes_ac5d2cd04816941238c12518435d1cc7b}{00010}}\ cliscf\_data\_store\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00011}00011\ \ \ \ \ 0:\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}:\ \textcolor{stringliteral}{'RUNNING'}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00013}00013\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00014}00014\ \ \ \ \ 1:\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'placement\_status'}:\ \textcolor{stringliteral}{'READY'}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00016}00016\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00019}00019\ \textcolor{comment}{\#\ Error\ handling}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00020}00020\ \textcolor{preprocessor}{@app.errorhandler(404)}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00021}\mbox{\hyperlink{namespaceroutes_a11c01782ff3258beecb164495bdb3c95}{00021}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_aee4a97c099b5f41402c9bc3cba9044e1}{not\_found}}(error):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00022}00022\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00023}00023\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 404\ errors.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00024}00024\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00025}00025\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00026}00026\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00027}00027\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}:\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}:\ \textcolor{stringliteral}{"{}Resource\ Not\ Found"{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}:\ 404,}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}:\ \textcolor{stringliteral}{"{}The\ resource\ you\ requested\ was\ not\ found."{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}:\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 404}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00038}00038\ \textcolor{preprocessor}{@app.errorhandler(400)}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00039}\mbox{\hyperlink{namespaceroutes_aa25fe717bd6e120f3203789498c8c584}{00039}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(error):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00040}00040\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00041}00041\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 400\ errors.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00042}00042\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00043}00043\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00044}00044\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00045}00045\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}:\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}:\ \textcolor{stringliteral}{"{}Bad\ Request"{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}:\ 400,}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}:\ \textcolor{stringliteral}{"{}The\ request\ could\ not\ be\ understood\ or\ was\ missing\ required\ parameters."{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}:\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 400}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00056}00056\ \textcolor{preprocessor}{@app.errorhandler(500)}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00057}\mbox{\hyperlink{namespaceroutes_a4b430e64de2b9ef01438a94995324578}{00057}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a3835b86d14fc4e361f491cdd5162117f}{internal\_error}}(error):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00058}00058\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00059}00059\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 500\ errors.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00060}00060\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00061}00061\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00062}00062\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00063}00063\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}:\ \{}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}:\ \textcolor{stringliteral}{"{}Internal\ Server\ Error"{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}:\ 500,}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}:\ \textcolor{stringliteral}{"{}An\ unexpected\ error\ occurred\ on\ the\ server."{}},}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}:\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 500}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00074}00074\ \textcolor{preprocessor}{@app.route('/control/placement/<int:lisId>/<string:command>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00075}\mbox{\hyperlink{namespaceroutes_ac9fb8f94141dbad10e5205afe7ed8ebf}{00075}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ac9fb8f94141dbad10e5205afe7ed8ebf}{control\_placement}}(command,\ lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00076}00076\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00077}00077\ \textcolor{stringliteral}{\ \ \ \ @brief\ Sends\ a\ Start/Stop\ command\ to\ initiate/stop\ movement\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00078}00078\ \textcolor{stringliteral}{\ \ \ \ @param\ command\ The\ command\ to\ execute\ (start/stop).}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00079}00079\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00080}00080\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ command.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00081}00081\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00084}00084\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'placement\_status'}]\ =\ command}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Placement\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00087}00087\ \textcolor{preprocessor}{@app.route('/configuration/placement/<int:lisId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00088}\mbox{\hyperlink{namespaceroutes_a8c7dac99c817584a9763b01e266e4804}{00088}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a8c7dac99c817584a9763b01e266e4804}{configure\_placement}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00089}00089\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00090}00090\ \textcolor{stringliteral}{\ \ \ \ @brief\ Configures\ the\ placement\ position\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00091}00091\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00092}00092\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ configuration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00093}00093\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00094}00094\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'placement\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Placement\ configuration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00097}00097\ \textcolor{preprocessor}{@app.route('/configuration/placement/<int:lisId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00098}\mbox{\hyperlink{namespaceroutes_afb0c1f18fd863b72709aaad3fbedddc0}{00098}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_afb0c1f18fd863b72709aaad3fbedddc0}{get\_placement\_configuration}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00099}00099\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00100}00100\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ current\ LIS\ placement\ configuration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00101}00101\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00102}00102\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ configuration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00103}00103\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'placement\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00106}00106\ \textcolor{preprocessor}{@app.route('/configuration/placement/<int:lisId>/status',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00107}\mbox{\hyperlink{namespaceroutes_a9a1cfb28baef8c58b0367777e062e1a0}{00107}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a9a1cfb28baef8c58b0367777e062e1a0}{get\_placement\_status}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00108}00108\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00109}00109\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ current\ LIS\ placement\ status.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00110}00110\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00111}00111\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ status.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00112}00112\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'placement\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00115}00115\ \textcolor{preprocessor}{@app.route('/control/radio-\/comms/<int:lisId>/<string:command>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00116}\mbox{\hyperlink{namespaceroutes_ada02cc02f79752b22e20198af0e9cab5}{00116}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ada02cc02f79752b22e20198af0e9cab5}{control\_radio\_comms}}(command,\ lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00117}00117\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00118}00118\ \textcolor{stringliteral}{\ \ \ \ @brief\ Sends\ a\ Start/Stop\ command\ to\ deploy/reset\ the\ configured\ LIS\ radio\ communications.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00119}00119\ \textcolor{stringliteral}{\ \ \ \ @param\ command\ The\ command\ to\ execute\ (start/stop).}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00120}00120\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00121}00121\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ command.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00122}00122\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00125}00125\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_comms\_status'}]\ =\ command}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Radio\ communications\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00128}00128\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/comms/<int:lisId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00129}00129\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a2f413e87ba5077b169057cb0f2c55201}{configure\_radio\_comms}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00130}00130\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00131}00131\ \textcolor{stringliteral}{\ \ \ \ @brief\ Configures\ the\ LIS\ radio\ communications.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00132}00132\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00133}00133\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ configuration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00134}00134\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00135}00135\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_comms\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Radio\ communications\ configuration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00138}00138\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/comms/<int:lisId>/feedback',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00139}\mbox{\hyperlink{namespaceroutes_a81356f95eb23145423c2fa04adc57e2a}{00139}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a81356f95eb23145423c2fa04adc57e2a}{radio\_comms\_feedback}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00140}00140\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00141}00141\ \textcolor{stringliteral}{\ \ \ \ @brief\ Enables\ the\ provision\ of\ feedback\ in\ terms\ of\ UE\ received\ power,\ to\ allow\ for\ automatic\ beam\ calibration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00142}00142\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00143}00143\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ feedback.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00144}00144\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00145}00145\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_comms\_feedback'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Radio\ communications\ feedback\ received"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00148}00148\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/comms/<int:lisId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00149}\mbox{\hyperlink{namespaceroutes_a76729938f5c858b82ab150efe76ae00c}{00149}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a76729938f5c858b82ab150efe76ae00c}{get\_radio\_comms\_configuration}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00150}00150\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00151}00151\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ LIS\ radio\ communication\ configuration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00152}00152\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00153}00153\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ configuration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00154}00154\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'radio\_comms\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00157}00157\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/comms/<int:lisId>/status',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00158}\mbox{\hyperlink{namespaceroutes_ae21b79f8d287d5b9f3d8cfc86ee9e310}{00158}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ae21b79f8d287d5b9f3d8cfc86ee9e310}{get\_radio\_comms\_status}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00159}00159\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00160}00160\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ LIS\ radio\ communication\ status.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00161}00161\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00162}00162\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ status.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00163}00163\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'radio\_comms\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00166}00166\ \textcolor{preprocessor}{@app.route('/control/radio-\/sensing/<int:lisId>/<string:command>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00167}\mbox{\hyperlink{namespaceroutes_a0e1e52cf7c6e223eb30c38968732c1d9}{00167}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a0e1e52cf7c6e223eb30c38968732c1d9}{control\_radio\_sensing}}(command,\ lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00168}00168\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00169}00169\ \textcolor{stringliteral}{\ \ \ \ @brief\ Sends\ a\ Start/Stop\ command\ to\ deploy/reset\ the\ configured\ radio\ sensing\ setup.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00170}00170\ \textcolor{stringliteral}{\ \ \ \ @param\ command\ The\ command\ to\ execute\ (start/stop).}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00171}00171\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00172}00172\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ command.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00173}00173\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00176}00176\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_status'}]\ =\ command}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00177}00177\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Radio\ sensing\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00179}00179\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/sensing/<int:lisId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00180}\mbox{\hyperlink{namespaceroutes_aaf2fa88e5957f30692c4d01ea1c97cc7}{00180}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_aaf2fa88e5957f30692c4d01ea1c97cc7}{configure\_radio\_sensing}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00181}00181\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00182}00182\ \textcolor{stringliteral}{\ \ \ \ @brief\ Configures\ the\ LIS\ radio\ sensing.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00183}00183\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00184}00184\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ result\ of\ the\ configuration.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00185}00185\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00186}00186\ \ \ \ \ cliscf\_data\_store.setdefault(lisId,\ \{\})[\textcolor{stringliteral}{'radio\_sensing\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Radio\ sensing\ configuration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00189}00189\ \textcolor{preprocessor}{@app.route('/configuration/radio-\/sensing/<int:lisId>/status',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00190}\mbox{\hyperlink{namespaceroutes_a27e0f2294f6bf336090b849df23d14ba}{00190}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a27e0f2294f6bf336090b849df23d14ba}{get\_radio\_sensing\_status}}(lisId):}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00191}00191\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00192}00192\ \textcolor{stringliteral}{\ \ \ \ @brief\ Gets\ the\ LIS\ radio\ sensing\ status.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00193}00193\ \textcolor{stringliteral}{\ \ \ \ @param\ lisId\ The\ ID\ of\ the\ LIS.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00194}00194\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ the\ current\ status.}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00195}00195\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cliscf\_data\_store.get(lisId,\ \{\}).get(\textcolor{stringliteral}{'radio\_sensing\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00198}00198\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{_c_l_i_s_c_f_2routes_8py_source_l00199}00199\ \ \ \ \ app.run(debug=\textcolor{keyword}{True})}
+
+\end{DoxyCode}

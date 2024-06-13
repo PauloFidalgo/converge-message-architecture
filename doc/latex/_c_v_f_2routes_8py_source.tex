@@ -1,0 +1,119 @@
+\doxysection{routes.\+py}
+\hypertarget{_c_v_f_2routes_8py_source}{}\label{_c_v_f_2routes_8py_source}\index{CVF/routes.py@{CVF/routes.py}}
+\mbox{\hyperlink{_c_v_f_2routes_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00001}\mbox{\hyperlink{namespace_c_v_c_f___a_p_i}{00001}}\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00005}00005\ \textcolor{keyword}{from}\ flask\ \textcolor{keyword}{import}\ Flask,\ request,\ jsonify}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00007}00007\ app\ =\ Flask(\_\_name\_\_)}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00009}00009\ \textcolor{comment}{\#\ Error\ handling}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00010}00010\ \textcolor{preprocessor}{@app.errorhandler(404)}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00011}00011\ \textcolor{keyword}{def\ }not\_found(error):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00012}00012\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00013}00013\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 404\ errors.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00014}00014\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00015}00015\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00016}00016\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00017}00017\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Resource\ Not\ Found"{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 404,}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}The\ resource\ you\ requested\ was\ not\ found."{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 404}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00028}00028\ \textcolor{preprocessor}{@app.errorhandler(400)}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00029}00029\ \textcolor{keyword}{def\ }bad\_request(error):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00030}00030\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00031}00031\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 400\ errors.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00032}00032\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00033}00033\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00034}00034\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00035}00035\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Bad\ Request"{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 400,}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}The\ request\ could\ not\ be\ understood\ or\ was\ missing\ required\ parameters."{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 400}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00046}00046\ \textcolor{preprocessor}{@app.errorhandler(500)}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00047}00047\ \textcolor{keyword}{def\ }internal\_error(error):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00048}00048\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00049}00049\ \textcolor{stringliteral}{\ \ \ \ @brief\ Handles\ 500\ errors.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00050}00050\ \textcolor{stringliteral}{\ \ \ \ @param\ error\ The\ error\ object.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00051}00051\ \textcolor{stringliteral}{\ \ \ \ @return\ JSON\ response\ with\ error\ details.}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00052}00052\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00053}00053\ \ \ \ \ problem\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'error'}\ :\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'type'}\ :\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'title'}\ :\ \textcolor{stringliteral}{"{}Internal\ Server\ Error"{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'status'}\ :\ 500,}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'detail'}\ :\ \textcolor{stringliteral}{"{}An\ unexpected\ error\ occurred\ on\ the\ server."{}},}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'instance'}\ :\ request.url}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(problem),\ 500}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00069}00069\ \textcolor{preprocessor}{@app.route('/control/cameras/<int:cameraId>/<string:command>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00070}\mbox{\hyperlink{namespaceroutes_ac4829c865afdb11438225b1cea677c69}{00070}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ac4829c865afdb11438225b1cea677c69}{cvf\_control\_start}}(command,\ cameraId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00073}00073\ \ \ \ \ cvf\_data\_store.setdefault(cameraId,\ \{\})[\textcolor{stringliteral}{'cvf\_control'}]\ =\ command}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}CV\ control\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00079}00079\ \textcolor{preprocessor}{@app.route('/configuration/cameras/<int:cameraId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00080}\mbox{\hyperlink{namespaceroutes_aca57936ba319bed984515393a6774eab}{00080}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_aca57936ba319bed984515393a6774eab}{configure\_camera}}(cameraId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00081}00081\ \ \ \ \ cvf\_data\_store.setdefault(cameraId,\ \{\})[\textcolor{stringliteral}{'camera\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Camera\ reconfiguration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00087}00087\ \textcolor{preprocessor}{@app.route('/configuration/cameras/<int:cameraId>/status',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00088}\mbox{\hyperlink{namespaceroutes_af68b5423ecb125b7b2c0414af1440211}{00088}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_af68b5423ecb125b7b2c0414af1440211}{get\_camera\_status}}(cameraId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cvf\_data\_store.get(cameraId,\ \{\}).get(\textcolor{stringliteral}{'camera\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00094}00094\ \textcolor{preprocessor}{@app.route('/configuration/cameras/<int:cameraId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00095}\mbox{\hyperlink{namespaceroutes_a9aa82ee30b50d7051bca297973525066}{00095}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a9aa82ee30b50d7051bca297973525066}{get\_camera\_configuration}}(cameraId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(cvf\_data\_store.get(cameraId,\ \{\}).get(\textcolor{stringliteral}{'camera\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00102}00102\ \textcolor{preprocessor}{@app.route('/control/vision-\/model/<int:modelId>/<string:command>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00103}\mbox{\hyperlink{namespaceroutes_aa9adbcf64894ce960168d66811896c6e}{00103}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_aa9adbcf64894ce960168d66811896c6e}{visual\_model\_control\_start}}(command,\ modelId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{if}\ command\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ [\textcolor{stringliteral}{'start'},\ \textcolor{stringliteral}{'stop'}]:}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceroutes_afd738b9253cab3a49f1626d92a080858}{bad\_request}}(\textcolor{stringliteral}{"{}Invalid\ command"{}})}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00106}00106\ \ \ \ \ vm\_data\_store.setdefault(modelId,\ \{\})[\textcolor{stringliteral}{'vision\_model\_control'}]\ =\ command}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ f\textcolor{stringliteral}{"{}Vision\ Model\ control\ \{command\}\ command\ executed\ successfully"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00112}00112\ \textcolor{preprocessor}{@app.route('/configuration/vision-\/model/<int:modelId>',\ methods=['POST'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00113}\mbox{\hyperlink{namespaceroutes_a318931a14ef8219b47db13b3dd008c6b}{00113}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a318931a14ef8219b47db13b3dd008c6b}{configure\_visual\_model}}(modelId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00114}00114\ \ \ \ \ vm\_data\_store.setdefault(modelId,\ \{\})[\textcolor{stringliteral}{'vision\_model\_configuration'}]\ =\ request.json}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(\{\textcolor{stringliteral}{"{}result"{}}:\ \textcolor{stringliteral}{"{}Vision\ Model\ reconfiguration\ successful"{}}\}),\ 201}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00120}00120\ \textcolor{preprocessor}{@app.route('/configuration/vision-\/model/<int:modelId>',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00121}\mbox{\hyperlink{namespaceroutes_a98ab20b7fc92e527ee039de9d8c058db}{00121}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_a98ab20b7fc92e527ee039de9d8c058db}{get\_vision\_model\_configuration}}(modelId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(vm\_data\_store.get(modelId,\ \{\}).get(\textcolor{stringliteral}{'vision\_model\_configuration'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00127}00127\ \textcolor{preprocessor}{@app.route('/configuration/vision-\/model/<int:modelId>/status',\ methods=['GET'])}}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00128}\mbox{\hyperlink{namespaceroutes_ad1fd354e163c974788e7568052bba33d}{00128}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceroutes_ad1fd354e163c974788e7568052bba33d}{get\_vision\_model\_status}}(modelId):}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return}\ jsonify(vm\_data\_store.get(modelId,\ \{\}).get(\textcolor{stringliteral}{'vision\_model\_status'},\ \{\})),\ 200}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00132}00132\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{_c_v_f_2routes_8py_source_l00133}00133\ \ \ \ \ app.run(debug=\textcolor{keyword}{True})}
+
+\end{DoxyCode}

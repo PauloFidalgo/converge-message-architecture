@@ -1,0 +1,63 @@
+\doxysection{models.\+py}
+\hypertarget{_cg_n_b_c_f_2models_8py_source}{}\label{_cg_n_b_c_f_2models_8py_source}\index{CgNBCF/models.py@{CgNBCF/models.py}}
+\mbox{\hyperlink{_cg_n_b_c_f_2models_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00001}\mbox{\hyperlink{namespacemodels}{00001}}\ \textcolor{keyword}{from}\ dataclasses\ \textcolor{keyword}{import}\ dataclass}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00003}00003\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00004}\mbox{\hyperlink{classmodels_1_1_gnb_radio_sensing}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_gnb_radio_sensing}{GnbRadioSensing}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00005}00005\ \ \ \ \ periodicity:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00006}00006\ \ \ \ \ iq\_samples:\ float}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00008}00008\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00009}\mbox{\hyperlink{classmodels_1_1_gnb_placement}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_gnb_placement}{GnbPlacement}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00010}00010\ \ \ \ \ x:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00011}00011\ \ \ \ \ y:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00012}00012\ \ \ \ \ z:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00014}00014\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00015}\mbox{\hyperlink{classmodels_1_1_f1}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_f1}{F1}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00016}00016\ \ \ \ \ remote\_ip:\ str}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00017}00017\ \ \ \ \ remote\_port:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00018}00018\ \ \ \ \ local\_ip:\ str}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00019}00019\ \ \ \ \ local\_port:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00021}00021\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00022}\mbox{\hyperlink{classmodels_1_1_band_configuration}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_band_configuration}{BandConfiguration}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00023}00023\ \ \ \ \ band:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00024}00024\ \ \ \ \ ssb\_arfcn:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00025}00025\ \ \ \ \ point\_a\_arfcn:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00027}00027\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00028}\mbox{\hyperlink{classmodels_1_1_r_u}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_r_u}{RU}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00029}00029\ \ \ \ \ band\_configuration:\ BandConfiguration}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00030}00030\ \ \ \ \ bandwidth\_mhz:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00031}00031\ \ \ \ \ tdd\_configuration:\ str}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00032}00032\ \ \ \ \ logical\_ant\_rx:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00033}00033\ \ \ \ \ logical\_ant\_tx:\ int}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00035}00035\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00036}\mbox{\hyperlink{classmodels_1_1_o_r_u}{00036}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_o_r_u}{ORU}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00037}\mbox{\hyperlink{classmodels_1_1_o_r_u_a03a8e08b0e6caa24c7301fa71e16280e}{00037}}\ \ \ \ \ seven\_two:\ \textcolor{stringliteral}{'SevenTwo'}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00038}00038\ \ \ \ \ ru:\ RU}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00040}00040\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00041}\mbox{\hyperlink{classmodels_1_1_o_d_u}{00041}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_o_d_u}{ODU}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00042}00042\ \ \ \ \ f1:\ F1}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00043}\mbox{\hyperlink{classmodels_1_1_o_d_u_ad915ddc16c400aa43fd432f8cb91253b}{00043}}\ \ \ \ \ seven\_two:\ \textcolor{stringliteral}{'SevenTwo'}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00044}00044\ \ \ \ \ ru:\ RU}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00046}00046\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00047}\mbox{\hyperlink{classmodels_1_1_o_c_u}{00047}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_o_c_u}{OCU}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00048}\mbox{\hyperlink{classmodels_1_1_o_c_u_adcdc08db2d2b216af6a58a6fd902f7e4}{00048}}\ \ \ \ \ cn:\ \textcolor{stringliteral}{'CN'}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00049}00049\ \ \ \ \ f1:\ F1}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00051}00051\ \textcolor{preprocessor}{@dataclass}}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00052}\mbox{\hyperlink{classmodels_1_1_gnb_configuration}{00052}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmodels_1_1_gnb_configuration}{GnbConfiguration}}:}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00053}00053\ \ \ \ \ o\_cu:\ OCU}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00054}00054\ \ \ \ \ o\_du:\ ODU}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00055}00055\ \ \ \ \ o\_ru:\ ORU}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00056}00056\ \ \ \ \ cg\_nb\_placement:\ GnbPlacement}
+\DoxyCodeLine{\Hypertarget{_cg_n_b_c_f_2models_8py_source_l00057}00057\ \ \ \ \ cg\_nb\_radio\_sensing:\ GnbRadioSensing}
+
+\end{DoxyCode}

@@ -1,5 +1,8 @@
+## @package CTCF_API
+# Documentation for CTCF API
+# This file contains the services made available by CTCF
+
 from flask import Flask, request, jsonify
-import ProblemDetails
 
 app = Flask(__name__)
 
@@ -52,34 +55,33 @@ def internal_error(error):
     }
     return jsonify(problem), 500
 
-# CTCF status
-@app.route('/configuration/placement/<int:ctcfId>/status', methods=['GET'])
-def get_placement_status(ctcfId):
-    return jsonify(ctcf_data_store.get(ctcfId, {}).get('ctcf_status', {})), 200
-
-# Traffic Control start/stop
-@app.route('/control/{<string:command>}/<int:ctcfId>', methods=['POST'])
+## CTCF Start/Stop
+# CTCF sends a start/stop command to control traffic servers
+@app.route('/control/<int:ctcfId>/<string:command>', methods=['POST'])
 def traffic_control_start(command, ctcfId):
     if command not in ['start', 'stop']:
         return bad_request("Invalid command")
     ctcf_data_store.setdefault(ctcfId, {})['traffic_control'] = command
     return jsonify({"result": f"Traffic Control {command} command executed successfully"}), 201
 
-# Get Traffic Control Rules
+## CTCF Traffic Control Rules
+# Get the current traffic control rules configuration
 @app.route('/configuration/<int:ctcfId>/rules', methods=['GET'])
 def get_traffic_control_rules(ctcfId):
-    return jsonify(ctcf_data_store.get(ctcfId, {}).get('traffic_control_rules', {})), 200
+    return jsonify(ctcf_data_store.get(ctcfId, {}).get('ctcf_rules', {})), 200
 
-# Add or modify Traffic Control Rules
+## CTCF Traffic Control Rules
+# Add or modify traffic control rules
 @app.route('/configuration/<int:ctcfId>/rules', methods=['POST'])
 def add_traffic_control_rules(lisId):
-    ctcf_data_store.setdefault(lisId, {})['traffic_control_rules'] = request.json
+    ctcf_data_store.setdefault(lisId, {})['ctcf_rules'] = request.json
     return jsonify({"result": " Traffic Control Rules configuration successful"}), 201
 
-# Get Traffic Statistics
+## CTCF Traffic Statistics
+# Get statistics related to traffic control
 @app.route('/telemetry/<int:ctcfId>', methods=['GET'])
 def get_traffic_statistics(ctcfId):
-    return jsonify(ctcf_data_store.get(ctcfId, {}).get('traffic_Statistics', {})), 200
+    return jsonify(ctcf_data_store.get(ctcfId, {}).get('traffic_statistics', {})), 200
 
 if __name__ == '__main__':
     app.run(debug=True)

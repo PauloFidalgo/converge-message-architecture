@@ -1,3 +1,7 @@
+## @package CgNB_API
+# Documentation for CgNB API
+# This file contains the services made available by CgNB
+
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -52,21 +56,29 @@ def internal_error(error):
     return jsonify(problem), 500
 
 
-
-# gNB start/stop
-@app.route('/control/<string:command>/<int:gnbId>', methods=['POST'])
+## CgNB Start/Stop
+# CgNB sends Start/Stop command to NT-RIC, O-CU, O-DU and O-RU
+@app.route('/control/<int:gnbId>/<string:command>', methods=['POST'])
 def gnb_control_start(command, gnbId):
     if command not in ['start', 'stop']:
         return bad_request("Invalid command")
     cgnbcf_data_store.setdefault(gnbId, {})['gnb_control'] = command
     return jsonify({"result": f"gNB control {command} command executed successfully"}), 201
 
-# Get gNB Configuration Status
+## CgNB Configuration Status
+# Get the current CgNB configuration
 @app.route('/configuration/<int:gnbId>', methods=['GET'])
 def get_gnb_configuration(gnbId):
     return jsonify(cgnbcf_data_store.get(gnbId, {}).get('gnb_configuration', {})), 200
 
-# gNB Reconfiguration
+## CgNB Status
+# Get the current CgNB status
+@app.route('/configuration/<int:gnbId>/status', methods=['GET'])
+def get_gnb_configuration(gnbId):
+    return jsonify(cgnbcf_data_store.get(gnbId, {}).get('gnb_status', {})), 200
+
+## CgNB Reconfiguration
+# CgNB creates and sends a reconfiguration command via CgNB interface to O-CU, O-DU, O-RU and NT-RIC
 @app.route('/configuration/<int:gnbId>', methods=['POST'])
 def configure_radio_comms(gnbId):
     cgnbcf_data_store.setdefault(gnbId, {})['gnb_configuration'] = request.json

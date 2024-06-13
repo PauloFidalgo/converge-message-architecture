@@ -2,15 +2,6 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Example data store for CgNBCF
-cgnbcf_data_store = {
-    1 : {
-        'gnb_control' : 'stop',
-        'gnb_configuration' : '',
-        'gnb_telemetry': '',
-    }
-}
-
 # Error handling
 @app.errorhandler(404)
 def not_found(error):
@@ -53,24 +44,24 @@ def internal_error(error):
 
 
 
-# gNB start/stop
-@app.route('/control/<string:command>/<int:gnbId>', methods=['POST'])
-def gnb_control_start(command, gnbId):
+# CUE start/stop
+@app.route('/control/<string:command>/<int:ueId>', methods=['POST'])
+def ue_control_start(command, ueId):
     if command not in ['start', 'stop']:
         return bad_request("Invalid command")
-    cgnbcf_data_store.setdefault(gnbId, {})['gnb_control'] = command
-    return jsonify({"result": f"gNB control {command} command executed successfully"}), 201
+    cuecf_data_store.setdefault(ueId, {})['ue_control'] = command
+    return jsonify({"result": f"UE control {command} command executed successfully"}), 201
 
-# Get gNB Configuration Status
-@app.route('/configuration/<int:gnbId>', methods=['GET'])
-def get_gnb_configuration(gnbId):
-    return jsonify(cgnbcf_data_store.get(gnbId, {}).get('gnb_configuration', {})), 200
+# Get UE Configuration Status
+@app.route('/configuration/<int:ueId>', methods=['GET'])
+def get_ue_configuration(ueId):
+    return jsonify(cuecf_data_store.get(ueId, {}).get('ue_configuration', {})), 200
 
-# gNB Reconfiguration
-@app.route('/configuration/<int:gnbId>', methods=['POST'])
-def configure_radio_comms(gnbId):
-    cgnbcf_data_store.setdefault(gnbId, {})['gnb_configuration'] = request.json
-    return jsonify({"result": "gNB reconfiguration successful"}), 201
+# UE Reconfiguration
+@app.route('/configuration/<int:ueId>', methods=['POST'])
+def configure_radio_comms(ueId):
+    cuecf_data_store.setdefault(ueId, {})['ue_configuration'] = request.json
+    return jsonify({"result": "UE reconfiguration successful"}), 201
 
 
 if __name__ == '__main__':
